@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(img/fondoBosque.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;       /* solo para ver el texto hasta que lo acomode */
+}
+ /*Estilo para el header de todas las páginas */
+header{
+    background: #000000;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 992px;
+    margin: 0 auto;
+}
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+}
+#iconoHeader{
+    margin-left: 30px;
+    align-self: center;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 30px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 60px;
+}
+.nav-menu-link{
+    padding: 8px 10px;
+    border-radius: 10px
+}
+.nav-menu-link:hover{
+    background-color: #6B7382;
+    transition: 0.5s;
+}
+.nav-toggle{
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 50px;
+    display: none;
+}
+ /*Estilo para el footer de todas las páginas */
+ footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #3D3D3D;
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    left: 0;
+ }
+
+  /* Estilo para la cabecera de la Página Principal */
+
+.cabecera{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    background-image: url('img/fondoCastilloAmbulante.jpg');
+    justify-content: center;
+    background-size: cover;
+    height: 120px;
+    color: #fff;
+}
+
+.accesosFijos{
+    margin-left: 30px;
+    color: #fff;
+}
+.barraBusqueda{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0 20px 0;
+}
+#buscador{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+#inputBuscar{
+    border-radius: 10px;
+    margin-right: 20px;
+}
+#lupaBusqueda{
+    height: 20px;
+    margin-left: 5px;
+}
+#btnBsucar{
+    position: absolute;
+    margin-right: 30px;
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+#paginaPrincipal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#carrucelPeliculas{
+    background: red;
+    display: flex;
+    width: 70%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#topTres{
+    width: 30%;
+    height: 300px;
+    background-color: green;
+}
+
+@media (max-width: 768px){
+ /*Estilo para el header de todas las páginas en dispositivos móviles*/
+body{
+    padding-top: 50px;
+}
+header{
+    height: 50px;
+}
+
+#iconoHeader{
+    height: 40px;
+    width: auto;
+}
+.nav-menu{
+    flex-direction: column;
+    align-items: center;
+    background-color: #43587F;
+    position: fixed;
+    left: 0%;
+    top: 50px;
+    width: 100%;
+    padding: 20px 0%;
+
+    height: calc(60% - 60px);
+    overflow-y: auto;
+    left: 100%;
+    transition: left 0.5s;
+}
+
+.nav-menu-item{
+    line-height: 50px;
+}
+.nav-menu-link:hover{
+    background: none;
+    color: #4889FF;
+}
+.nav-toggle{
+    display: block;
+    cursor: pointer;
+}
+.nav-menu_visible{
+    left: 0;
+}
+ /*Estilo para el footer de todas las páginas en dispositivos móviles*/
+ footer{
+     height: 20px;
+ }
+}
