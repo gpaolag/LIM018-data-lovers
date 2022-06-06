@@ -6,9 +6,62 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="Principal">
+    <Header id="header-Master">
+     <nav class="nav">
+      <img src="/src/img/IconoHeader.jpg" alt="logo-Studio-Ghibli" id="iconoHeader" width="180px">
+      <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu">
+          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">INICIO</a></li>
+          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">PELICULAS</a></li>
+          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">PERSONAJES</a></li>
+          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">DIRECTORES</a></li>
+        </ul>
+      </nav>
+    </Header>
+     </nav>
+
+    <div id="cabecera" class="cabecera">
+      <h2>STUDIO GHIBLI</h2>
+      <h3>El Estudio que crea magia en cada historia</h3>
+      <h3>Con 5 peliculas nominadas a los Premios Oscar</h3>
+    </div>
+
+    <div class="barraBusqueda">
+      <a href="" class="accesosFijos">FILMS</a>
+      <a href="" class="accesosFijos">ESTRENOS</a>
+      <div id="buscador">
+      <input type="text" id="inputBuscar">
+      <button id="btnBsucar"><img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda"></button>
+      </div>
+    </div>
+
+    <section id="paginaPrincipal">
+      <section id="carrucelPeliculas">
+
+      </section>
+      <section id="topTres">
+        <div>PELICULAS ACLAMADAS</div>
+          <div id="imgTopAclamadas1">
+            <div id="txtTopAclamadas1"></div>
+          </div>
+          <div id="imgTopAclamadas2">
+            <div id="txtTopAclamadas2"></div>
+          </div>
+          <div id="imgTopAclamadas3">
+            <div id="txtTopAclamadas3"></div>
+          </div>
+      </section>
+    </section>
+
+
+    <footer id="foother-Master">
+      <h6>© 2020 Studios Ghibli Project OP, Todos los derechos reservados.</h6>
+    </footer>
+  </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
