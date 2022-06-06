@@ -132,16 +132,38 @@ header{
     background: red;
     display: flex;
     width: 70%;
-    height: 200px;
+    height: 390px;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+#txtCarruce{
+    background-color: royalblue;
+    width: 80%;
+    height: 160px;
+    align-self: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
 
 #topTres{
     width: 30%;
-    height: 300px;
+    height: 390px;
     background-color: green;
+}
+#txtFilmsAclamados{
+    text-align: center;
+    margin-top: 10px;
+    justify-content: center;
+    padding: 5px;
+}
+#filmsAclamados{
+    background-color: gray;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 20px;
 }
 
 @media (max-width: 768px){
@@ -152,10 +174,18 @@ body{
 header{
     height: 50px;
 }
-
+.cabecera{
+    margin-top: 0%;
+}
 #iconoHeader{
     height: 40px;
     width: auto;
+}
+#carrucelPeliculas{
+    width: 100%;
+}
+#topTres,#txtFilmsAclamados{
+    display: none;
 }
 .nav-menu{
     flex-direction: column;
