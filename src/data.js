@@ -3,7 +3,7 @@
 export const example = () => {
   return 'example';
 };
-// intento de carga
+
 export const anotherExample = () => {
   return 'OMG';
 };
