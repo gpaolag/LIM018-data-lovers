@@ -11,7 +11,7 @@ let navMenu = document.querySelector(".nav-menu");
     navMenu.classList.toggle("nav-menu_visible");
     })
 const films = data.films;
-const mainmovies = document.querySelector("#carrucelPeliculas");
+const mainmovies = document.querySelector("#carruselPeliculas");
     
 function showInfoMovies (arrayData){
     mainmovies.innerHTML = "";
