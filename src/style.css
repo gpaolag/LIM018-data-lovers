@@ -62,6 +62,10 @@ header{
     line-height: 50px;
     display: none;
 }
+.div_content_movies{
+    display:inline-block;
+  }
+
  /*Estilo para el footer de todas las páginas */
  footer{
     display: flex;
