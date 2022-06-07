@@ -9,10 +9,9 @@
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="Principal">
     <Header id="header-Master">
      <nav class="nav">
-      <img src="/src/img/IconoHeader.jpg" alt="logo-Studio-Ghibli" id="iconoHeader" width="180px">
+      <img src="./img/IconoHeader.jpg" alt="logo-Studio-Ghibli" id="iconoHeader" width="180px">
       <button class="nav-toggle"><i class="fas fa-bars"></i></button>
         <ul class="nav-menu">
           <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">INICIO</a></li>
@@ -22,7 +21,6 @@
         </ul>
       </nav>
     </Header>
-     </nav>
 
     <div id="cabecera" class="cabecera">
       <h2>STUDIO GHIBLI</h2>
@@ -30,32 +28,32 @@
       <h3>Con 5 peliculas nominadas a los Premios Oscar</h3>
     </div>
 
+  <section id="Principal" class="back-principal">  
     <div class="barraBusqueda">
       <a href="" class="accesosFijos">FILMS</a>
       <a href="" class="accesosFijos">ESTRENOS</a>
       <div id="buscador">
-      <input type="text" id="inputBuscar">
-      <button id="btnBsucar"><img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda"></button>
+        <input type="text" id="inputBuscar">
+        <button id="btnBsucar"><img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda"></button>
       </div>
     </div>
-
-    <section id="paginaPrincipal">
+  
+    <section id="paginaPrincipal" class="secciones">
       <section id="carrucelPeliculas">
-        <section id="txtCarruce">
-        </section>
       </section>
       <section id="topTres">
-        <div id="txtFilmsAclamados">PELICULAS ACLAMADAS</div>
-          <div id="filmsAclamados">
-          </div>
+        <div id="txtFilmsAclamados">
+          PELICULAS ACLAMADAS
+        </div>
+        <div id="filmsAclamados">
+        </div>
       </section>
     </section>
-
-
+  </section>
     <footer id="foother-Master">
       <h6>© 2020 Studios Ghibli Project OP, Todos los derechos reservados.</h6>
     </footer>
-  </div>
+  
     <script src="main.js" type="module"></script>
   </body>
 </html>

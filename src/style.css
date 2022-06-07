@@ -4,9 +4,6 @@
     padding: 0;
 }
 body{
-    background-image: url(img/fondoBosque.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     color: #fff;       /* solo para ver el texto hasta que lo acomode */
 }
  /*Estilo para el header de todas las páginas */
@@ -39,7 +36,6 @@ header{
     margin-right: 30px;
     list-style: none;
 }
-
 .nav-menu-item{
     font-size: 18px;
     margin: 0 10px;
@@ -66,6 +62,17 @@ header{
     display:inline-block;
   }
 
+.back-principal {
+  padding:30px;
+  margin: -20px 0px 0px 0px;
+  background-image: url(img/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.secciones {
+  display:inline-block;
+}
+
  /*Estilo para el footer de todas las páginas */
  footer{
     display: flex;
@@ -79,19 +86,18 @@ header{
     bottom: 0;
     left: 0;
  }
-
-  /* Estilo para la cabecera de la Página Principal */
-
+/* Estilo para la cabecera de la Página Principal */
 .cabecera{
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    background-image: url('img/fondoCastilloAmbulante.jpg');
-    justify-content: center;
-    background-size: cover;
-    height: 120px;
-    color: #fff;
+  margin-top: 60px;
+  margin-bottom:0px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  background-image: url('img/fondoCastilloAmbulante.jpg');
+  justify-content: center;
+  background-size: auto;
+  height: 120px;
+  color: #fff;
 }
 
 .accesosFijos{
@@ -131,7 +137,6 @@ header{
     width: 100%;
     height: 100%;
 }
-
 #carrucelPeliculas{
     background: red;
     display: flex;
@@ -150,7 +155,6 @@ header{
     margin-bottom: 30px;
     border-radius: 20px;
 }
-
 #topTres{
     width: 30%;
     height: 390px;
@@ -172,57 +176,56 @@ header{
 
 @media (max-width: 768px){
  /*Estilo para el header de todas las páginas en dispositivos móviles*/
-body{
+  body{
     padding-top: 50px;
-}
-header{
+  }
+  header{
     height: 50px;
-}
-.cabecera{
+  }
+  .cabecera{
     margin-top: 0%;
-}
-#iconoHeader{
+  }
+  #iconoHeader{
     height: 40px;
     width: auto;
-}
-#carrucelPeliculas{
-    width: 100%;
-}
-#topTres,#txtFilmsAclamados{
-    display: none;
-}
-.nav-menu{
-    flex-direction: column;
-    align-items: center;
-    background-color: #43587F;
-    position: fixed;
-    left: 0%;
-    top: 50px;
-    width: 100%;
-    padding: 20px 0%;
-
-    height: calc(60% - 60px);
-    overflow-y: auto;
-    left: 100%;
-    transition: left 0.5s;
-}
-
-.nav-menu-item{
-    line-height: 50px;
-}
-.nav-menu-link:hover{
-    background: none;
-    color: #4889FF;
-}
-.nav-toggle{
-    display: block;
-    cursor: pointer;
-}
-.nav-menu_visible{
-    left: 0;
-}
- /*Estilo para el footer de todas las páginas en dispositivos móviles*/
- footer{
-     height: 20px;
- }
+  }
+  #carrucelPeliculas{
+      width: 100%;
+  }
+  #topTres,#txtFilmsAclamados{
+      display: none;
+  }
+  .nav-menu{
+      flex-direction: column;
+      align-items: center;
+      background-color: #43587F;
+      position: fixed;
+      left: 0%;
+      top: 50px;
+      width: 100%;
+      padding: 20px 0%;
+  
+      height: calc(60% - 60px);
+      overflow-y: auto;
+      left: 100%;
+      transition: left 0.5s;
+  }
+  .nav-menu-item{
+      line-height: 50px;
+  }
+  .nav-menu-link:hover{
+      background: none;
+      color: #4889FF;
+  }
+  .nav-toggle{
+      display: block;
+      cursor: pointer;
+  }
+  .nav-menu_visible{
+      left: 0;
+  }
+   /*Estilo para el footer de todas las páginas en dispositivos móviles*/
+   footer{
+       height: 20px;
+   }
 }
