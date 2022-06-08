@@ -1,4 +1,4 @@
-import { example } from './data.js';
+/* import { example } from './data.js'; */
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -10,9 +10,11 @@ let navMenu = document.querySelector(".nav-menu");
     navToggle.addEventListener("click",()=>{
     navMenu.classList.toggle("nav-menu_visible");
     })
+    
 const films = data.films;
 const mainmovies = document.querySelector("#carruselPeliculas");
-    
+let showFilms = films;
+
 function showInfoMovies (arrayData){
     mainmovies.innerHTML = "";
     arrayData.forEach((filmsPublished) => {
@@ -24,7 +26,57 @@ function showInfoMovies (arrayData){
         mainmovies.appendChild(divFilm);
     });
 }
-showInfoMovies(films);
-/* const dataPeliculas = data.films;
-console.log(dataPeliculas); */
+
+let btnAZ = document.querySelector('#aZ');
+btnAZ.addEventListener("click",orderAZ);
+function orderAZ(){
+   let aZ = films.sort((a,b) =>{
+        if(a.title>b.title){
+            return 1;
+        }
+        return -1;
+    })
+    showFilms = aZ;
+    showInfoMovies(showFilms);
+}
+
+let btnZA = document.querySelector('#zA');
+btnZA.addEventListener("click",orderZA);
+function orderZA(){
+   let zA = films.sort((a,b) =>{
+        if(a.title<b.title){
+            return 1;
+        }
+        return -1;
+    })
+    showFilms = zA;
+    showInfoMovies(showFilms);
+}
+
+let btnAntigua = document.querySelector('#antigua');
+btnAntigua.addEventListener("click",orderAntigua);
+function orderAntigua(){
+   let antigua = films.sort((a,b) =>{
+        if(a.release_date>b.release_date){
+            return 1;
+        }
+        return -1;
+    })
+    showFilms = antigua;
+    showInfoMovies(showFilms);
+}
+
+let btnReciente = document.querySelector('#reciente');
+btnReciente.addEventListener("click",orderReciente);
+function orderReciente(){
+   let reciente = films.sort((a,b) =>{
+        if(a.release_date<b.release_date){
+            return 1;
+        }
+        return -1;
+    })
+    showFilms = reciente;
+    showInfoMovies(showFilms);
+}
+showInfoMovies(showFilms);
 
