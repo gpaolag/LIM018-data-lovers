@@ -2,36 +2,46 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Macondo', cursive;
   }
   body{
       background: #11348F;       /* solo para ver el texto hasta que lo acomode */
   }
    /*Estilo para el header de todas las páginas */
-  header{
-      background: #000000;
-      position: fixed;
-      width: 100%;
-      height: 60px;
-      top: 0;
-      left: 0;
+header{
+    font-family: 'Macondo', cursive;
+    background: #000000;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
   }
-  .nav{
+.nav{
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 992px;
       margin: 0 auto;
   }
-  .nav-link{
+.nav-link{
       color: #fff;
       text-decoration: none;
   }
-  #iconoHeader{
+#iconoHeader{
       margin-left: 30px;
       align-self: center;
   }
-  
+.studio {
+  font-family: 'Lato', sans-serif;
+  font-weight:800;
+  font-size:50px;
+  padding:20px;
+  }
+.subtitulo {
+  font-family: 'Lato', sans-serif;
+  font-size:22px;
+  padding-left:20px;
+}
   .nav-menu{
       display: flex;
       margin-right: 30px;
@@ -63,9 +73,10 @@
     display:inline-block;
     align-items: center;
     margin:15px 10px 10px 10px;
+    max-width: 210px;
     }
   .div_img_movie {
-    border: 3px solid #D8D3CE;
+    border: 5px solid #D8D3CE;
     border-radius: 10px;
     width: 206px;
     height: 290px;
@@ -75,7 +86,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    line-height: 15px;
+    line-height: 20px;
     text-align: center;
     color: #FFFFFF;
     margin:5px;
@@ -120,6 +131,12 @@
   }
   .div_slider{
     width:50%;
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .dragon {
     padding:30px;
@@ -131,32 +148,37 @@
       color: #fff;
   }
   .barraBusqueda{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin: 10px 0 20px 0;
+    display: inline-flex;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    justify-content:space-around;
+    min-width:100%;
   }
-  #buscador{
-      display: flex;
-      width: 100%;
-      justify-content: flex-end;
-  }
+#div_buscador {
+  flex:right !important;
+}
   #inputBuscar{
-      border-radius: 10px;
-      margin-right: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    max-width:250px;
+    height:30px;
+    margin: 10px;
+    margin-left: 20px;
+    paddin-left:10px;
   }
   #lupaBusqueda{
       height: 20px;
       margin-left: 5px;
   }
   #btnBuscar{
-      position: absolute;
-      margin-right: 30px;
-      background: none;
-      border: 0;
-      color: #fff;
-      cursor: pointer;
+    position: absolute;
+    background: #D0A50E;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    margin: 8px 35px 5px 15px;
+    padding:5px 10px 3px 10px;
+    border-radius:25px;
   }
   #paginaPrincipal{
       display: flex;
@@ -198,8 +220,19 @@
       margin: auto;
       border-radius: 20px;
   }
-
- 
+.btnNavegar {
+  background:#D0A50E;
+  color: #000000;
+  padding:10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin:8px;
+  font-family: 'Macondo', cursive;
+}
+.btnNavegar:hover, #btnBuscar:hover {
+  background:#e5c348;
+  color: #ffffff;
+}
   
   @media (max-width: 768px){
    /*Estilo para el header de todas las páginas en dispositivos móviles*/
@@ -211,6 +244,9 @@
     }
     .cabecera{
       margin-top: 0%;
+    }
+    .barraBusqueda{
+      display:block;
     }
     #iconoHeader{
       height: 40px;

@@ -1,7 +1,5 @@
-/* import { example } from './data.js'; */
-// import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente } from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -13,7 +11,6 @@ let navMenu = document.querySelector(".nav-menu");
     
 const films = data.films;
 const mainmovies = document.querySelector("#carruselPeliculas");
-let showFilms = films;
 
 function showInfoMovies (arrayData){
     mainmovies.innerHTML = "";
@@ -26,57 +23,25 @@ function showInfoMovies (arrayData){
         mainmovies.appendChild(divFilm);
     });
 }
+showInfoMovies(films);
 
 let btnAZ = document.querySelector('#aZ');
-btnAZ.addEventListener("click",orderAZ);
-function orderAZ(){
-   let aZ = films.sort((a,b) =>{
-        if(a.title>b.title){
-            return 1;
-        }
-        return -1;
-    })
-    showFilms = aZ;
-    showInfoMovies(showFilms);
-}
+btnAZ.addEventListener("click",()=>{
+  showInfoMovies(orderAZ());
+});
+
 
 let btnZA = document.querySelector('#zA');
-btnZA.addEventListener("click",orderZA);
-function orderZA(){
-   let zA = films.sort((a,b) =>{
-        if(a.title<b.title){
-            return 1;
-        }
-        return -1;
-    })
-    showFilms = zA;
-    showInfoMovies(showFilms);
-}
+btnZA.addEventListener("click",()=>{
+  showInfoMovies(orderZA());
+});
 
 let btnAntigua = document.querySelector('#antigua');
-btnAntigua.addEventListener("click",orderAntigua);
-function orderAntigua(){
-   let antigua = films.sort((a,b) =>{
-        if(a.release_date>b.release_date){
-            return 1;
-        }
-        return -1;
-    })
-    showFilms = antigua;
-    showInfoMovies(showFilms);
-}
+btnAntigua.addEventListener("click",()=>{
+  showInfoMovies(orderAntigua());
+});
 
 let btnReciente = document.querySelector('#reciente');
-btnReciente.addEventListener("click",orderReciente);
-function orderReciente(){
-   let reciente = films.sort((a,b) =>{
-        if(a.release_date<b.release_date){
-            return 1;
-        }
-        return -1;
-    })
-    showFilms = reciente;
-    showInfoMovies(showFilms);
-}
-showInfoMovies(showFilms);
-
+btnReciente.addEventListener("click",()=>{
+  showInfoMovies(orderReciente());
+});
