@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente } from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, search } from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -45,3 +45,8 @@ let btnReciente = document.querySelector('#reciente');
 btnReciente.addEventListener("click",()=>{
   showInfoMovies(orderReciente());
 });
+
+let ingreso = document.querySelector('#inputBuscar');
+  ingreso.addEventListener("keyup",()=>{
+    showInfoMovies(search());
+  });
