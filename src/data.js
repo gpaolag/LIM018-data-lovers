@@ -1,6 +1,7 @@
 import data from './data/ghibli/ghibli.js';
 const films = data.films;
 let showFilms = films;
+let showFilms2 = films;
 
 
 export function orderAZ(){
@@ -48,13 +49,15 @@ export function orderReciente(){
 }
 
 export function newArrayPeople(){
-    let newPeople = "";
+    let peoplelist=[];
     for(let i=0; i<films.length; i++){
         for(let j=0;j<films[i].people.length;j++){
-            newPeople = newPeople + films[i].people[j].name +",";
+            let variable = {"id": `${films[i].people[j].id}`,
+                            "name": `${films[i].people[j].name}`,
+                            "img": `${films[i].people[j].img}`};
+            peoplelist.push(variable);
         }}
-    newPeople = newPeople.split(",");
-    return newPeople;
+    return peoplelist;
 }
 
 
@@ -64,3 +67,10 @@ export function search(){
   showFilms = resultado;
   return showFilms;
 }
+
+export function searchPeople(arrayIngreso){
+    let resultado = arrayIngreso.filter( all => 
+      `${all.name.toLowerCase()} `.includes(document.querySelector('#inputBuscar').value.toLowerCase()));
+    showFilms2 = resultado;
+    return showFilms2;
+  }
