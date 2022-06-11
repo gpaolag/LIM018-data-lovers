@@ -69,23 +69,69 @@ header{
       line-height: 50px;
       display: none;
   }
-  .div_content_movies{
-    display:inline-block;
+  /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
+  #contenedorCarrusel, #carruselPeliculas{
+    display: flex;
     align-items: center;
-    margin:15px 10px 10px 10px;
-    max-width: 210px;
-    }
+    position: relative;
+    padding: auto;
+    overflow: hidden;
+  }
+
+#contenedorCarrusel #flechaIzquierda, #contenedorCarrusel .flechaDerecha{
+  position: absolute;
+  border: none;
+  background: rgb(255, 255, 255, 0.3);
+  font-size: 40px;
+  height:35%;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: #000;
+  cursor: pointer;
+  z-index: 500px;
+}
+
+#contenedorCarrusel .flechaIzquierda{
+  left: 0;
+}
+
+#contenedorCarrusel .flechaDerecha{
+  right: 0;
+}
+
+#contenedorCarrusel .flechaIzquierda:hover, #contenedorCarrusel .flechaDerecha:hover{
+  background: rgba(255, 255 , 255, 0.7);
+  transition: 0.5s;
+}
+
+#contenedorCarrusel{
+  width: 70%;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+#contenedorCarrusel #carruselPeliculas{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
+
+
+.div_content_movies{
+  margin-left: 15.5px;
+  }
 .img_movie {
   max-width: 180px;
   max-height: 180px;
   border: 5px solid #D0A50E;
 }
 .div_img_movie {
-    border: 5px solid #D8D3CE;
-    border-radius: 10px;
-    width: 206px;
-    height: 290px;
-  }
+  border: 3px solid #D8D3CE;
+  border-radius: 10px;
+  width: 206px;
+  height: 290px;
+}
 .films-titles{
     font-family: 'Macondo', cursive;
     font-style: normal;
@@ -95,6 +141,7 @@ header{
     text-align: center;
     color: #FFFFFF;
     margin:5px;
+    height: 50px;
   }
   
   .back-principal {
@@ -196,10 +243,9 @@ header{
   }
   #carruselPeliculas{
     display: flex;
-    width: 70%;
+    width: 100%;
     height: 390px;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
     flex-direction: row;
@@ -273,6 +319,18 @@ header{
       height: 40px;
       width: auto;
     }
+    /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
+    
+    #contenedorCarrusel{
+      width: 100%;
+    overflow: visible;
+  }
+#contenedorCarrusel #carruselPeliculas{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+/*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
     #carruselPeliculas{
       width: 100%;
       margin-top: 30px;

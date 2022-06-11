@@ -25,6 +25,18 @@ function showInfoMovies (arrayData){
 }
 showInfoMovies(films);
 
+/* Permite el funcionamiento del carrusel  */
+const carrusel = document.querySelector("#carruselPeliculas");
+const flechaIzq = document.querySelector("#flechaIzquierda");
+const flechaDer = document.querySelector("#flechaDerecha");
+flechaDer.addEventListener("click", ()=>{
+  carrusel.scrollLeft += carrusel.offsetWidth;
+});
+flechaIzq.addEventListener("click", ()=>{
+  carrusel.scrollLeft -= carrusel.offsetWidth;
+});
+/*<<<<<<<<<<<<<------>>>>>>>>>>  */
+
 let btnAZ = document.querySelector('#aZ');
 btnAZ.addEventListener("click",()=>{
   showInfoMovies(orderAZ());
@@ -52,7 +64,7 @@ let ingreso = document.querySelector('#inputBuscar');
     showInfoPeople(searchPeople(newArrayPeople()));
     if(document.getElementById("inputBuscar").value==""){
         showInfoMovies(films);
-      };
+      }
   });
   
 
