@@ -23,6 +23,7 @@ function showInfoMovies (arrayData){
         mainmovies.appendChild(divFilm);
     });
 }
+
 showInfoMovies(films);
 
 /* Permite el funcionamiento del carrusel  */
@@ -42,7 +43,6 @@ btnAZ.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
   showInfoMovies(orderAZ());
 });
-
 
 let btnZA = document.querySelector('#zA');
 btnZA.addEventListener("click",()=>{
@@ -71,7 +71,7 @@ let ingreso = document.querySelector('#inputBuscar');
         showInfoMovies(films);
       }
   });
-  
+
 
 function showInfoPeople (arrayData){
     arrayData.forEach((filmsPublished) => {
