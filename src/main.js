@@ -39,27 +39,32 @@ flechaIzq.addEventListener("click", ()=>{
 
 let btnAZ = document.querySelector('#aZ');
 btnAZ.addEventListener("click",()=>{
+  carrusel.scrollLeft=0;
   showInfoMovies(orderAZ());
 });
 
 
 let btnZA = document.querySelector('#zA');
 btnZA.addEventListener("click",()=>{
+  carrusel.scrollLeft=0;
   showInfoMovies(orderZA());
 });
 
 let btnAntigua = document.querySelector('#antigua');
 btnAntigua.addEventListener("click",()=>{
+  carrusel.scrollLeft=0;
   showInfoMovies(orderAntigua());
 });
 
 let btnReciente = document.querySelector('#reciente');
 btnReciente.addEventListener("click",()=>{
+  carrusel.scrollLeft=0;
   showInfoMovies(orderReciente());
 });
 
 let ingreso = document.querySelector('#inputBuscar');
   ingreso.addEventListener("keyup",()=>{
+    carrusel.scrollLeft=0;
     showInfoMovies(search());
     showInfoPeople(searchPeople(newArrayPeople()));
     if(document.getElementById("inputBuscar").value==""){
@@ -84,20 +89,22 @@ const principales=[
     {
       "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
       "title": "Howl's Moving Castle",
+      "director": "Hayao Miyazaki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg",
       "release_date": "2004"},
     {
       "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
       "title": "Spirited Away",
+      "director": "Hayao Miyazaki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Spirited_Away.png",
       "release_date": "2001"},
     {
       "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
       "title": "My Neighbor Totoro",
+      "director": "Hayao Miyazaki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg",
       "release_date": "1988"}];
 const bestmovies = document.querySelector("#bestFilms");
-document.getElementById("bestFilms").innerHTML="saludo";
 //metodo de mostrar peliculas destacadas
 function showBestMovies (arrayData){
     bestmovies.innerHTML="";
@@ -105,9 +112,10 @@ function showBestMovies (arrayData){
         const div2Film = document.createElement("div"); //div para cada tarjeta
         div2Film.classList.add("div_best_movies");
         div2Film.innerHTML=`<img src="${filmsPublished.poster}" class="img_movie" />
-        <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.title}</h3></b>`;
-      let cadena=`<img src="${filmsPublished.poster}" class="div_best_movie" />
-        <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.title}</h3></b>`;
+        <div class="best_textos"><h3 class="contenedor_section_h3"><p>${filmsPublished.title}</h3>
+      <h2 class="section_h2"> ${filmsPublished.director}</h2>
+      <h3 class="contenedor_section_h3"><p>${filmsPublished.release_date}</h3></div>`;
+
       bestFilms.appendChild(div2Film);
     });
 }

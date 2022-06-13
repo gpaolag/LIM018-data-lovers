@@ -80,7 +80,6 @@ header{
 
 #contenedorCarrusel .flechaIzquierda, #contenedorCarrusel .flechaDerecha{
   position: absolute;
-  z-index: 500px;
   border: none;
   background: rgb(255, 255, 255, 0.3);
   font-size: 40px;
@@ -118,17 +117,39 @@ header{
 }
 
 /*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
-
+.div_content_movies {
+  padding-left:10px;
+  padding-right:10px;
+}
 .img_movie {
-  max-width: 180px;
-  max-height: 180px;
+  min-width:120px;
+  max-width: 150px;
+  max-height: 150px;
   border: 5px solid #D0A50E;
+  margin-right:20px;
 }
 .div_img_movie {
   border: 3px solid #D8D3CE;
   border-radius: 10px;
   width: 206px;
   height: 290px;
+}
+.contenedor_section_h3 {
+  font-family: 'Macondo', cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.section_h2{
+  font-family: 'Macondo', cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #D0A50E;
+  margin:10px;
 }
 .films-titles{
     font-family: 'Macondo', cursive;
@@ -141,22 +162,42 @@ header{
     margin:5px;
     height: 50px;
   }
-  
-  .back-principal {
-    padding:30px;
-    padding-top:60px;
-    padding-bottom:40px !important;
-    margin: -20px 0px 0px 0px;
-    background-image: url(img/fondo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.div_best_movies {
+  min-width: 330px;
+  min-height: 160px;
+  display: inline-flex;
+  padding: 5px 20px 10px 20px;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+}
+.best_textos {
+  display:flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.back-principal {
+  padding:30px;
+  padding-top:60px;
+  padding-bottom:40px !important;
+  margin: -20px 0px 0px 0px;
+  background-image: url(img/fondo2.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  min-height:800px;
   }
-  .secciones {
+.secciones {
     display:inline-block;
   }
   
    /*Estilo para el footer de todas las páginas */
-   footer{
+footer{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -169,7 +210,7 @@ header{
       left: 0;
    }
   /* Estilo para la cabecera de la Página Principal */
-  .cabecera{
+.cabecera{
     margin-top: 60px;
     margin-bottom:0px;
     display: inline-flex;
@@ -184,7 +225,7 @@ header{
     align-content: stretch;
     flex-wrap: wrap;
   }
-  .div_slider{
+.div_slider{
     width:50%;
     display: flex;
     align-content: center;
@@ -193,16 +234,16 @@ header{
     flex-wrap: wrap;
     justify-content: center;
   }
-  .dragon {
+.dragon {
     padding:30px;
     align-items: center;
   }
   
-  .accesosFijos{
+.accesosFijos{
       margin-left: 30px;
       color: #fff;
   }
-  .barraBusqueda{
+.barraBusqueda{
     display: inline-flex;
     align-items: center;
     margin: 10px 0 20px 0;
@@ -260,13 +301,17 @@ header{
   #topTres{
       width: 30%;
       height: 390px;
-      background-color: green;
   }
   #txtFilmsAclamados{
-      text-align: center;
-      margin-top: 10px;
-      justify-content: center;
-      padding: 5px;
+    text-align: center;
+    font-family: 'Macondo', cursive;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    padding: 10px;
+    background:#718CED;
+    border-radius:10px;
+
   }
   #filmsAclamados{
       background-color: gray;
@@ -318,13 +363,15 @@ header{
       width: auto;
     }
     /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
-    
-#contenedorCarrusel #carruselPeliculas{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 20px;
-  overflow: visible;
-}
+    #contenedorCarrusel {
+      width: 100%;
+    }
+    #contenedorCarrusel #carruselPeliculas{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      overflow: visible;
+    }
 /*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
     #carruselPeliculas{
       width: 100%;
