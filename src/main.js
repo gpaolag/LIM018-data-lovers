@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, search, searchPeople, newArrayPeople } from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople } from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -41,32 +41,32 @@ flechaIzq.addEventListener("click", ()=>{
 let btnAZ = document.querySelector('#aZ');
 btnAZ.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderAZ());
+  showInfoMovies(orderAZ(films));
 });
 
 let btnZA = document.querySelector('#zA');
 btnZA.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderZA());
+  showInfoMovies(orderZA(films));
 });
 
 let btnAntigua = document.querySelector('#antigua');
 btnAntigua.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderAntigua());
+  showInfoMovies(orderAntigua(films));
 });
 
 let btnReciente = document.querySelector('#reciente');
 btnReciente.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderReciente());
+  showInfoMovies(orderReciente(films));
 });
 
 let ingreso = document.querySelector('#inputBuscar');
   ingreso.addEventListener("keyup",()=>{
     carrusel.scrollLeft=0;
-    showInfoMovies(search());
-    showInfoPeople(searchPeople(newArrayPeople()));
+    showInfoMovies(search(films));
+    showInfoPeople(searchPeople(newArrayPeople(films),films));
     if(document.getElementById("inputBuscar").value==""){
         showInfoMovies(films);
       }
@@ -115,8 +115,44 @@ function showBestMovies (arrayData){
         <div class="best_textos"><h3 class="contenedor_section_h3"><p>${filmsPublished.title}</h3>
       <h2 class="section_h2"> ${filmsPublished.director}</h2>
       <h3 class="contenedor_section_h3"><p>${filmsPublished.release_date}</h3></div>`;
-
-      bestFilms.appendChild(div2Film);
+      bestmovies.appendChild(div2Film);
     });
 }
 showBestMovies(principales);
+
+//vistas de los menus
+const peliculas_men=document.getElementById("peliculas_menu");
+peliculas_men.addEventListener("click",()=>{
+  document.getElementById("cabecera").style.display="none";
+  document.getElementById("topTres").style.display="none";
+  document.getElementById("contenedorCarrusel").style.width="100%";
+  showInfoMovies(films);
+  document.getElementById("botonesOrdenar").style.display="block";
+});
+
+const personajes_men=document.getElementById("personajes_menu");
+personajes_men.addEventListener("click",()=>{
+  document.getElementById("cabecera").style.display="none";
+  document.getElementById("topTres").style.display="none";
+  document.getElementById("contenedorCarrusel").style.width="100%";
+  mainmovies.innerHTML = "";
+  showInfoPeople(newArrayPeople(films));
+  document.getElementById("botonesOrdenar").style.display="none";
+});
+
+//funciones de Busqueda
+function search(films){
+    let showFilms = films;
+  let resultado = films.filter( all => 
+    `${all.title.toLowerCase()} ${all.director.toLowerCase()} ${all.producer.toLowerCase()} ${all.release_date.toLowerCase()}`.includes(document.querySelector('#inputBuscar').value.toLowerCase()));
+  showFilms = resultado;
+  return showFilms;
+}
+
+function searchPeople(arrayIngreso,films){
+    let showFilms2 = films;
+    let resultado = arrayIngreso.filter( all => 
+      `${all.name.toLowerCase()} `.includes(document.querySelector('#inputBuscar').value.toLowerCase()));
+    showFilms2 = resultado;
+    return showFilms2;
+  }

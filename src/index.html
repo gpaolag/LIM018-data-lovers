@@ -6,6 +6,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -13,12 +14,13 @@
      <nav class="nav">
       <img src="./img/IconoHeader.jpg" alt="logo-Studio-Ghibli" id="iconoHeader" width="180px">
       <button class="nav-toggle"><i class="fas fa-bars"></i></button>
-        <ul class="nav-menu">
-          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">INICIO</a></li>
-          <li id="" class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">PELICULAS</a></li>
-          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">PERSONAJES</a></li>
-          <li class="nav-menu-item"><a href="a" class="nav-menu-link nav-link">DIRECTORES</a></li>
-        </ul>
+      <ul class="nav-menu">
+        <li class="nav-menu-item"><a href="index.html" class="nav-menu-link nav-link">INICIO</a></li>
+        <li class="nav-menu-item"><a id="peliculas_menu" class="nav-menu-link nav-link">PELICULAS</a></li>
+        <li class="nav-menu-item"><a id="personajes_menu" class="nav-menu-link nav-link">PERSONAJES</a></li>
+        <li class="nav-menu-item"><a id="directores" class="nav-menu-link nav-link">DIRECTORES</a></li>
+        <li class="nav-menu-item"><a id="locaciones" class="nav-menu-link nav-link">LOCACIONES</a></li>
+      </ul>
       </nav>
     </header>
 
@@ -45,15 +47,15 @@
       <div id="div_buscador">
           <input type="text" id="inputBuscar" placeholder="Películas, Personajes, Directores y Más">
           <button id="btnBuscar"><img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda"></button>
-        </div>
+      </div>
     </div>
   
     <section id="paginaPrincipal" class="secciones">
       <section id="contenedorCarrusel">        
       <section id="carruselPeliculas">
     </section>
-    <button id="flechaIzquierda" class="flechaIzquierda"><</i></button>
-      <button id="flechaDerecha" class="flechaDerecha">></i></button>       
+      <button id="flechaIzquierda" class="flechaIzquierda"><i class="fa fa-angle-left"></i></button>
+      <button id="flechaDerecha" class="flechaDerecha"><i class="fa fa-angle-right"></i></button>       
        </section> 
 
       <section id="topTres">
@@ -66,16 +68,22 @@
     </section>
 
     <section id="paginaPeliculas">
-      <div id="tituloPeliculas__paginaPeliculas" class="titulos">TODAS LAS PELICULAS</div>
+      <div id="tituloPeliculas__paginaPeliculas" class="titulos">
+        TODAS LAS PELICULAS
+      </div>
       <div id="contenedorGlobalPeliculas">
       </div>
     </section>
 
     <section id="paginaIndividualPeliculas">
-      <div id="tituloPelicula__Individual" class="titulos">TITULO DE LA PELICULA</div>
+      <div id="tituloPelicula__Individual" class="titulos">
+        TITULO DE LA PELICULA
+      </div>
       <div id="contenedorPeliculas__Individual">
         <div id="posterPelicula__Individual"></div>
-        <div id="DescripcionPelicula__Individual">TEXTO DESCRIPTIVO</div>
+        <div id="DescripcionPelicula__Individual">
+          TEXTO DESCRIPTIVO
+        </div>
         <div id="infoRelacionada__Individual">
           <div id="director__Individual" class="txtInfoRelacionada">DIRECTOR:<div></div>
           </div>

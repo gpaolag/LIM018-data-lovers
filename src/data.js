@@ -1,10 +1,5 @@
-import data from './data/ghibli/ghibli.js';
-const films = data.films;
-let showFilms = films;
-let showFilms2 = films;
-
-
-export function orderAZ(){
+export function orderAZ(films){
+    let showFilms = films;
    let aZ = films.sort((a,b) =>{
         if(a.title>b.title){
             return 1;
@@ -15,7 +10,8 @@ export function orderAZ(){
     return showFilms;
 }
 
-export function orderZA(){
+export function orderZA(films){
+    let showFilms = films;
    let zA = films.sort((a,b) =>{
         if(a.title<b.title){
             return 1;
@@ -26,7 +22,8 @@ export function orderZA(){
     return showFilms;
 }
 
-export function orderAntigua(){
+export function orderAntigua(films){
+    let showFilms = films;
    let antigua = films.sort((a,b) =>{
         if(a.release_date>b.release_date){
             return 1;
@@ -37,7 +34,8 @@ export function orderAntigua(){
     return showFilms;
 }
 
-export function orderReciente(){
+export function orderReciente(films){
+    let showFilms = films;
    let reciente = films.sort((a,b) =>{
         if(a.release_date<b.release_date){
             return 1;
@@ -48,7 +46,7 @@ export function orderReciente(){
     return showFilms;
 }
 
-export function newArrayPeople(){
+export function newArrayPeople(films){
     let peoplelist=[];
     for(let i=0; i<films.length; i++){
         for(let j=0;j<films[i].people.length;j++){
@@ -59,18 +57,3 @@ export function newArrayPeople(){
         }}
     return peoplelist;
 }
-
-
-export function search(){
-  let resultado = films.filter( all => 
-    `${all.title.toLowerCase()} ${all.director.toLowerCase()} ${all.producer.toLowerCase()} ${all.release_date.toLowerCase()}`.includes(document.querySelector('#inputBuscar').value.toLowerCase()));
-  showFilms = resultado;
-  return showFilms;
-}
-
-export function searchPeople(arrayIngreso){
-    let resultado = arrayIngreso.filter( all => 
-      `${all.name.toLowerCase()} `.includes(document.querySelector('#inputBuscar').value.toLowerCase()));
-    showFilms2 = resultado;
-    return showFilms2;
-  }
