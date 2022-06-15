@@ -126,6 +126,10 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
   document.getElementById("contenedorCarrusel").style.width="100%";
+  document.getElementById("flechaIzquierda").style.display="none";
+  document.getElementById("flechaDerecha").style.display="none";
+  document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
+  document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
   showInfoMovies(films);
   document.getElementById("botonesOrdenar").style.display="block";
 });
