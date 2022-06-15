@@ -255,15 +255,16 @@ footer{
       color: #fff;
   }
 .barraBusqueda{
-    display: inline-flex;
+  background-color: rgb(46, 53, 97, 0.5);
+    display: flex;
     align-items: center;
-    margin: 10px 0 0 0;
     justify-content:space-around;
-    min-width:100%;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
   }
-#div_buscador {
-  flex:right !important;
-}
+
   #inputBuscar{
     border-radius: 10px;
     min-width:260px;
@@ -277,12 +278,10 @@ footer{
       margin-left: 5px;
   }
   #btnBuscar{
-    position: absolute;
     background: #D0A50E;
-    border: 0;
-    color: #fff;
+    border: 1;
     cursor: pointer;
-    margin: 8px 35px 5px 15px;
+    align-self: center;
     padding:5px 10px 3px 10px;
     border-radius:25px;
   }
@@ -301,21 +300,32 @@ footer{
     flex-direction: row;
   }
   #topTres{
-      width: 30%;
-      height: 390px;
+    border: 2px solid #fff;
+    width: 25%;
+    height: auto;
+    margin: auto;
+  }
+  #botonesOrdenar{
+    display: flex;
+    padding-left: 30px;
+  }
+  #div_buscador{
+    display: flex;
+    height: 100%;
+    justify-self: flex-end;
+    padding-right: 30px;
   }
   #txtFilmsAclamados, .titulos{
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
-    margin-top: 10px;
+    font-family: 'Mali', cursive;
     margin-bottom: 10px;
     justify-content: center;
     padding: 10px;
-    background:#718CED;
-    border-radius:10px;
+    background:#363E74;
+    color: #FFF;
   }
   #filmsAclamados{
-      background-color: gray;
+
       width: 80%;
       height: 80%;
       margin: auto;
