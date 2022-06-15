@@ -8,7 +8,7 @@
   }
    /*Estilo para el header de todas las páginas */
 header{
-    font-family: 'Macondo', cursive;
+    font-family: 'Mali', cursive;
     background: #000000;
     position: fixed;
     width: 100%;
@@ -36,15 +36,17 @@ header{
       align-self: center;
   }
 .studio {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Permanent Marker', cursive;
   font-weight:800;
   font-size:50px;
   padding:20px;
-  }
+  text-shadow: 0 0 12px #000, 0 0 15px #0000FF;  
+}
 .subtitulo {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Mali', cursive;
   font-size:22px;
   padding-left:20px;
+  text-shadow: 0 0 12px #000, 0 0  15px #0000FF;  
 }
   .nav-menu{
       display: flex;
@@ -126,6 +128,10 @@ header{
   padding-left:10px;
   padding-right:10px;
 }
+/* Al pasar el ratón por la peli, aumenta su tamaño */
+.div_content_movies:hover{
+  transform: scale(1.10);
+}
 .img_movie {
   min-width:120px;
   max-width: 150px;
@@ -140,7 +146,7 @@ header{
   height: 290px;
 }
 .contenedor_section_h3 {
-  font-family: 'Macondo', cursive;
+  font-family: 'Mali', cursive;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -148,7 +154,7 @@ header{
   color: #FFFFFF;
 }
 .section_h2{
-  font-family: 'Macondo', cursive;
+  font-family: 'Permanent Marker', cursive;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -157,7 +163,7 @@ header{
   margin:10px;
 }
 .films-titles{
-    font-family: 'Macondo', cursive;
+    font-family: 'Mali', cursive;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -294,22 +300,13 @@ footer{
     align-content: flex-start;
     flex-direction: row;
   }
-  #txtCarruce{
-      background-color: royalblue;
-      width: 80%;
-      height: 160px;
-      align-self: flex-end;
-      justify-content: flex-start;
-      margin-bottom: 30px;
-      border-radius: 20px;
-  }
   #topTres{
       width: 30%;
       height: 390px;
   }
   #txtFilmsAclamados, .titulos{
     text-align: center;
-    font-family: 'Macondo', cursive;
+    font-family: 'Permanent Marker', cursive;
     margin-top: 10px;
     margin-bottom: 10px;
     justify-content: center;
@@ -331,7 +328,7 @@ footer{
   border-radius: 10px;
   cursor: pointer;
   margin:8px;
-  font-family: 'Macondo', cursive;
+  font-family: 'Mali', cursive;
   font-size: 16px;
   font-weight:600;
 }
