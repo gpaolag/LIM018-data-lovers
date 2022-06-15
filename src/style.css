@@ -76,7 +76,7 @@ header{
       display: none;
   }
   /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
-  #contenedorCarrusel, #carruselPeliculas{
+  #contenedorCarrusel, .carruselPeliculas{
     display: flex;
     align-items: center;
     position: relative;
@@ -113,11 +113,11 @@ header{
 }
 
 #contenedorCarrusel{
-  height: 80vh;
+  height: 100%;
   width: 70%;
   padding: 20px 0;
 }
-#contenedorCarrusel #carruselPeliculas{
+#contenedorCarrusel .carruselPeliculas{
   display: flex;
   flex-wrap: nowrap;
   scroll-behavior: smooth;
@@ -140,11 +140,12 @@ header{
   margin-right:20px;
 }
 .div_img_movie {
-    cursor: pointer;
-    border: 3px solid #D8D3CE;
-    border-radius: 10px;
-    width: 206px;
-    height: 290px;
+  border: 3px solid #D8D3CE;
+  border-radius: 10px;
+  width: 206px;
+  height: 290px;
+  margin: 10px 0;    
+  cursor: pointer;
 }
 .contenedor_section_h3 {
   font-family: 'Mali', cursive;
@@ -164,6 +165,7 @@ header{
   margin:10px;
 }
 .films-titles{
+  display: flex;
     font-family: 'Mali', cursive;
     font-style: normal;
     font-weight: 700;
@@ -172,7 +174,9 @@ header{
     text-align: center;
     color: #FFFFFF;
     margin:5px;
-    height: 50px;
+    width: 150px;
+    
+
   }
 
 .div_best_movies {
@@ -262,6 +266,7 @@ footer{
     justify-content:space-around;
     width: 80%;
     margin: auto;
+    margin-top: 50px;
     margin-bottom: 15px;
     border-radius: 10px;
   }
@@ -291,7 +296,7 @@ footer{
       width: 100%;
       height: 100%;
   }
-#carruselPeliculas{
+.carruselPeliculas{
     display: flex;
     width: 100%;
     height: 390px;
@@ -435,6 +440,12 @@ footer{
   right: 0;
   margin: 5px auto;
 }
+.carruselPeliculas__pgPeliculas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 60px;
+}
 
   @media (max-width: 768px){
    /*Estilo para el header de todas las páginas en dispositivos móviles*/
@@ -466,14 +477,16 @@ footer{
     #contenedorCarrusel {
       width: 100%;
     }
-    #contenedorCarrusel #carruselPeliculas{
+    #contenedorCarrusel .carruselPeliculas{
       display: grid;
       grid-template-columns: repeat(1,1fr);
       gap: 20px;
       overflow: visible;
+      align-content: center;
+      justify-content: center;
     }
 /*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
-    #carruselPeliculas{
+    .carruselPeliculas{
       width: 100%;
       height: 100%;
       margin-top: 30px;
@@ -482,6 +495,7 @@ footer{
     #topTres, #txtFilmsAclamados, #contenedorCarrusel .flechaIzquierda, #contenedorCarrusel .flechaDerecha {
       display: none;
   }
+
     #div_buscador {
       display:block;
     }
