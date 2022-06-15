@@ -144,7 +144,8 @@ header{
   border-radius: 10px;
   width: 206px;
   height: 290px;
-  margin: 10px 0;
+  margin: 10px 0;    
+  cursor: pointer;
 }
 .contenedor_section_h3 {
   font-family: 'Mali', cursive;
@@ -270,19 +271,19 @@ footer{
     border-radius: 10px;
   }
 
-  #inputBuscar{
+#inputBuscar{
     border-radius: 10px;
     min-width:260px;
-    height:30px;
+    height:40px;
     margin: 10px;
     margin-right: 20px;
     padding-left:10px;
   }
-  #lupaBusqueda{
+#lupaBusqueda{
       height: 20px;
       margin-left: 5px;
   }
-  #btnBuscar{
+#btnBuscar{
     background: #D0A50E;
     border: 1;
     cursor: pointer;
@@ -290,12 +291,12 @@ footer{
     padding:5px 10px 3px 10px;
     border-radius:25px;
   }
-  #paginaPrincipal{
+#paginaPrincipal{
       display: flex;
       width: 100%;
       height: 100%;
   }
-  .carruselPeliculas{
+.carruselPeliculas{
     display: flex;
     width: 100%;
     height: 390px;
@@ -303,24 +304,25 @@ footer{
     flex-wrap: wrap;
     align-content: flex-start;
     flex-direction: row;
-  }
-  #topTres{
+ }
+#topTres{
     border: 2px solid #fff;
     width: 25%;
     height: auto;
     margin: auto;
   }
-  #botonesOrdenar{
+#botonesOrdenar{
     display: flex;
     padding-left: 30px;
+    flex-wrap: wrap;
   }
-  #div_buscador{
+#div_buscador{
     display: flex;
     height: 100%;
     justify-self: flex-end;
     padding-right: 30px;
   }
-  #txtFilmsAclamados, .titulos{
+#txtFilmsAclamados, .titulos{
     text-align: center;
     font-family: 'Mali', cursive;
     margin-bottom: 10px;
@@ -329,7 +331,7 @@ footer{
     background:#363E74;
     color: #FFF;
   }
-  #filmsAclamados{
+#filmsAclamados{
 
       width: 80%;
       height: 80%;
@@ -352,7 +354,15 @@ footer{
   color: #ffffff;
 }
 /* Desde acá comienza el estilo para la pagina de peliculas */
-#paginaPeliculas, #paginaIndividualPeliculas{
+#paginaPeliculas {
+    display:none;
+    position: relative;
+    height: 100vh;
+    width: 95vw;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#paginaIndividualPeliculas{
   display: flex;
   position: relative;
   height: 100vh;
@@ -365,7 +375,7 @@ footer{
   height: 40px;
   width: 350px;
 }
-#contenedorGlobalPeliculas, #contenedorPeliculas__Individual{
+#contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
   display: flex;
   background-color: blue;
   width: 90%;
@@ -375,16 +385,17 @@ footer{
 /* Desde acá la vista para las peliculas individuales */
 #paginaIndividualPeliculas{
   background-color: yellow;
+  padding: 30px 0px 30px 0px;
 }
-#posterPelicula__Individual{
+#posterPelicula_Individual{
   border: 3px solid #D8D3CE;
   border-radius: 10px;
   width: 206px;
   height: 290px;
   margin: 20px 0 0 50px;
 }
-#DescripcionPelicula__Individual{
-  display: flex;
+#DescripcionPelicula{
+  display: block;
   align-items: center;
   justify-content: center;
   background: #fff;
@@ -393,7 +404,7 @@ footer{
   justify-self: center;
   margin: 20px 100px;  
 }
-#infoRelacionada__Individual{
+#infoRelacionada_Individual{
   display: flex;
   position: absolute;
   width: 50%;
@@ -418,7 +429,7 @@ footer{
   left: 0;
   right: 0;
 }
-#contenedorCarrusel__Personajes{
+#contenedorCarrusel_Personajes{
   position: absolute;
   display: flex;
   align-self: flex-end;
