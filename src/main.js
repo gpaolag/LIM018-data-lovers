@@ -21,6 +21,20 @@ function showInfoMovies (arrayData){
         <b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.title}</h3></b>`;
         divFilm.setAttribute("id", filmsPublished.id);
         mainmovies.appendChild(divFilm);
+
+        const identityMovie = document.getElementById(filmsPublished.id)
+        identityMovie.addEventListener("click", infoMovie);
+
+        //metodo de info individual de pelicula
+        function infoMovie(){
+            document.getElementById("posterPelicula_Individual").innerHTML= `<img src="${filmsPublished.poster}" class="div_img_movie" />`;
+            document.getElementById("tituloPelicula_Individual").innerHTML= `<b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.title}</h3></b>`;
+            document.getElementById("DescripcionPelicula").innerHTML= `  <div class="descripcion_movie"> <h2>${filmsPublished.description}</h2></div>`;
+            document.getElementById("director_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">DIRECTOR: </H3> <h2>${filmsPublished.director}</h2>`;
+            document.getElementById("productor_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">PRODUCTOR: </H3> <h2>${filmsPublished.producer}</h2>`;
+            document.getElementById("añoLanzamiento_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">AÑO DE LANZAMIENTO: </H3> <h2>${filmsPublished.release_date}</h2>`;
+            document.getElementById("ranking_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">RANKING: </H3> <h2>${filmsPublished.rt_score}</h2>`;
+        }
     });
 }
 
