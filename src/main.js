@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople } from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie } from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -18,22 +18,31 @@ function showInfoMovies (arrayData){
         const divFilm = document.createElement("div"); //div para cada tarjeta
         divFilm.classList.add("div_content_movies");
         divFilm.innerHTML=`<img src="${filmsPublished.poster}" class="div_img_movie" />
-        <b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.title}</h3></b>`;
+        <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.title}</h3></b>`;
         divFilm.setAttribute("id", filmsPublished.id);
         mainmovies.appendChild(divFilm);
 
-        const identityMovie = document.getElementById(filmsPublished.id)
-        identityMovie.addEventListener("click", infoMovie);
+      const mainpeople = document.querySelector("#carruselPers_Relacionados");
+      const identityMovie = document.getElementById(filmsPublished.id)
+        identityMovie.addEventListener("click", ()=>{
+          document.getElementById("paginaPrincipal").style.display="none";
+          document.getElementById("cabecera").style.display="none";
+          document.getElementById("topTres").style.display="none";
+          document.getElementById("Peliculas").style.display="flex";
+          mainpeople.innerHTML="";
+          infoMovie();
+          showInfoPeople(peopleforMovie(arrayData,`${filmsPublished.id}`),mainpeople);
+        });
 
         //metodo de info individual de pelicula
         function infoMovie(){
-            document.getElementById("posterPelicula_Individual").innerHTML= `<img src="${filmsPublished.poster}" class="div_img_movie" />`;
-            document.getElementById("tituloPelicula_Individual").innerHTML= `<b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.title}</h3></b>`;
+            document.getElementById("posterPelicula").innerHTML= `<img src="${filmsPublished.poster}" class="div_img_movie" />`;
+            document.getElementById("tituloPelicula").innerHTML= `<b><h3 ><p class="films-titles">${filmsPublished.title}</h3></b>`;
             document.getElementById("DescripcionPelicula").innerHTML= `  <div class="descripcion_movie"> <h2>${filmsPublished.description}</h2></div>`;
-            document.getElementById("director_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">DIRECTOR: </H3> <h2>${filmsPublished.director}</h2>`;
-            document.getElementById("productor_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">PRODUCTOR: </H3> <h2>${filmsPublished.producer}</h2>`;
-            document.getElementById("añoLanzamiento_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">AÑO DE LANZAMIENTO: </H3> <h2>${filmsPublished.release_date}</h2>`;
-            document.getElementById("ranking_Individual").innerHTML= `  <h3 class="contenedor_section_h3__movti">RANKING: </H3> <h2>${filmsPublished.rt_score}</h2>`;
+            document.getElementById("director_Individual").innerHTML= `  <h3 class="descripcion_titles">DIRECTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.director}</h2>`;
+            document.getElementById("productor_Individual").innerHTML= `  <h3 class="descripcion_titles">PRODUCTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.producer}</h2>`;
+            document.getElementById("añoLanzamiento_Individual").innerHTML= `  <h3 class="descripcion_titles">LANZAMIENTO: </H3> <h2 class="descripcion_movie">${filmsPublished.release_date}</h2>`;
+            document.getElementById("ranking_Individual").innerHTML= `  <h3 class="descripcion_titles">RANKING : </h3> <h2 class="descripcion_movie">${filmsPublished.rt_score}</h2>`;
         }
     });
 }
@@ -80,19 +89,19 @@ let ingreso = document.querySelector('#inputBuscar');
   ingreso.addEventListener("keyup",()=>{
     carrusel.scrollLeft=0;
     showInfoMovies(search(films));
-    showInfoPeople(searchPeople(newArrayPeople(films),films));
+    showInfoPeople(searchPeople(newArrayPeople(films),films),mainmovies);
     if(document.getElementById("inputBuscar").value==""){
         showInfoMovies(films);
       }
   });
 
 
-function showInfoPeople (arrayData){
+function showInfoPeople (arrayData,mainmovies){
     arrayData.forEach((filmsPublished) => {
         const divFilm = document.createElement("div"); //div para cada tarjeta de personaje
         divFilm.classList.add("div_content_movies");
         divFilm.innerHTML=`<img src="${filmsPublished.img}" class="div_img_movie" />
-        <b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.name}</h3></b>`;
+        <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.name}</h3></b>`;
         divFilm.setAttribute("id", filmsPublished.id);
         mainmovies.appendChild(divFilm);
     });
@@ -137,6 +146,8 @@ showBestMovies(principales);
 //vistas de los menus
 const peliculas_men=document.getElementById("peliculas_menu");
 peliculas_men.addEventListener("click",()=>{
+  document.getElementById("paginaPrincipal").style.display="flex";
+  document.getElementById("Peliculas").style.display="none";
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
   document.getElementById("contenedorCarrusel").style.width="100%";
@@ -150,11 +161,15 @@ peliculas_men.addEventListener("click",()=>{
 
 const personajes_men=document.getElementById("personajes_menu");
 personajes_men.addEventListener("click",()=>{
+  document.getElementById("paginaPrincipal").style.display="flex";
+  document.getElementById("Peliculas").style.display="none";
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
   document.getElementById("contenedorCarrusel").style.width="100%";
+  document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
+  document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
   mainmovies.innerHTML = "";
-  showInfoPeople(newArrayPeople(films));
+  showInfoPeople(newArrayPeople(films),mainmovies);
   document.getElementById("botonesOrdenar").style.display="none";
 });
 

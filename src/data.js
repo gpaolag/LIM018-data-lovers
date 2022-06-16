@@ -57,3 +57,18 @@ export function newArrayPeople(films){
         }}
     return peoplelist;
 }
+
+export function peopleforMovie(films, id){
+    let peoplelist=[];
+     for(let i=0; i<films.length; i++){
+       if(films[i].id==id){
+         for(let j=0;j<films[i].people.length;j++){
+             let variable = {"id": `${films[i].people[j].id}`,
+                             "name": `${films[i].people[j].name}`,
+                             "img": `${films[i].people[j].img}`};
+             peoplelist.push(variable);
+         }
+       }
+     }
+     return peoplelist;
+ }

@@ -127,6 +127,7 @@ header{
 .div_content_movies {
   padding-left:10px;
   padding-right:10px;
+  margin: 10px;
 }
 /* Al pasar el ratón por la peli, aumenta su tamaño */
 .div_content_movies:hover{
@@ -140,12 +141,11 @@ header{
   margin-right:20px;
 }
 .div_img_movie {
-  border: 3px solid #D8D3CE;
-  border-radius: 10px;
-  width: 206px;
-  height: 290px;
-  margin: 10px 0;    
-  cursor: pointer;
+    cursor: pointer;
+    border: 5px double #D8D3CE;
+    border-radius: 10px;
+    width: 226px;
+    height: 310px;
 }
 .contenedor_section_h3 {
   font-family: 'Mali', cursive;
@@ -165,7 +165,7 @@ header{
   margin:10px;
 }
 .films-titles{
-  display: flex;
+    display: flex;
     font-family: 'Mali', cursive;
     font-style: normal;
     font-weight: 700;
@@ -174,9 +174,8 @@ header{
     text-align: center;
     color: #FFFFFF;
     margin:5px;
-    width: 150px;
-    
-
+    justify-content: center;
+    width: 200px;
   }
 
 .div_best_movies {
@@ -322,7 +321,7 @@ footer{
     justify-self: flex-end;
     padding-right: 30px;
   }
-#txtFilmsAclamados, .titulos{
+#txtFilmsAclamados{
     text-align: center;
     font-family: 'Mali', cursive;
     margin-bottom: 10px;
@@ -371,81 +370,19 @@ footer{
   justify-content: center;
   flex-wrap: wrap;
 }
-.titulos{
-  height: 40px;
-  width: 350px;
-}
 #contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
   display: flex;
   background-color: blue;
   width: 90%;
   height: 90%;
 }
-
-/* Desde acá la vista para las peliculas individuales */
-#paginaIndividualPeliculas{
-  background-color: yellow;
-  padding: 30px 0px 30px 0px;
-}
-#posterPelicula_Individual{
-  border: 3px solid #D8D3CE;
-  border-radius: 10px;
-  width: 206px;
-  height: 290px;
-  margin: 20px 0 0 50px;
-}
-#DescripcionPelicula{
-  display: block;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  width: 50%;
-  height: 30%;
-  justify-self: center;
-  margin: 20px 100px;  
-}
-#infoRelacionada_Individual{
-  display: flex;
-  position: absolute;
-  width: 50%;
-  height: 10%;
-  background-color: #fff;
-  align-self: flex-end;
-  margin-bottom: 290px;
-  margin-left: 50%;
-  transform: translate(-50%);
-  flex-wrap: wrap;
-}
-.txtInfoRelacionada{
-  padding: 5px;
-  width: 50%;
-  height: 50%;
-}
-#personajesRelacionados{
-  position: absolute;
-  margin-left: 50%;
-  transform: translate(-50%);
-  margin-top: 290px;
-  left: 0;
-  right: 0;
-}
-#contenedorCarrusel_Personajes{
-  position: absolute;
-  display: flex;
-  align-self: flex-end;
-  background-color: #fff;
-  height: 35%;
-  width: 900px;
-  left: 0;
-  right: 0;
-  margin: 5px auto;
-}
 .carruselPeliculas__pgPeliculas{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 30px 60px;
-}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 60px;
+  }
+
 
   @media (max-width: 768px){
    /*Estilo para el header de todas las páginas en dispositivos móviles*/
@@ -532,3 +469,104 @@ footer{
      }
      
   }
+
+/* Desde acá la vista para las peliculas individuales */
+#Peliculas{
+  background:rgb(21, 176, 104);
+  padding: 30px;;
+  display: none;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#contenedorPelicula{
+  display: flex;
+  padding: 30px;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+#carruselPersonajes{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#posterPelicula{
+  min-width: 30%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+}
+.titulos{
+  padding:5px;
+  border: 2px solid;
+  width: 350px;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  margin-bottom: 20px;
+  justify-content: center;
+  background: #363E74;
+  color: #FFF;
+}
+.bloque_descripciones {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+#infoRelacionada_Individual{
+  display: flex;
+  min-width: 100%;
+}
+.infoRelacionada{
+  width: 100%;
+  margin: 10px;
+}
+.descripcion_movie{
+  font-family: 'Mali', cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: #565252;
+  margin: 0px 15px 0px 15px;
+  padding: 15px;
+  background: #D8D3CE;
+  border-radius: 21px;
+}
+.descripcion_titles{
+  font-size: 16px;
+  margin-bottom:20px;
+  border: 2px solid;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  justify-content: center;
+  background: #D0A50E;
+  color: #FFF;
+}
+#DescripcionPelicula{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin:10px;  
+}
+#carruselPers_Relacionados{
+  width: 100%;
+  height: 390px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
