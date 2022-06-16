@@ -25,10 +25,10 @@ export function orderZA(films){
 export function orderAntigua(films){
     let showFilms = films;
    let antigua = films.sort((a,b) =>{
-        if(a.release_date>b.release_date){
-            return 1;
+        if(a.release_date<b.release_date){
+            return -1;
         }
-        return -1;
+        return 1;
     })
     showFilms = antigua;
     return showFilms;

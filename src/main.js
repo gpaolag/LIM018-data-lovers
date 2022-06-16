@@ -60,7 +60,6 @@ flechaIzq.addEventListener("click", ()=>{
   carrusel.scrollLeft -= carrusel.offsetWidth;
 });
 /*<<<<<<<<<<<<<------>>>>>>>>>>  */
-
 let btnAZ = document.querySelector('#aZ');
 btnAZ.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
