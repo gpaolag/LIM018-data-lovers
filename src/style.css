@@ -96,9 +96,6 @@ header{
     color: #fff;
     text-decoration: none;
   }
-  .nav-menu-item:hover > ul{
-    display: flex;
-  }
 
   /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
   #contenedorCarrusel, .carruselPeliculas{
@@ -165,7 +162,7 @@ header{
   border: 5px solid #D0A50E;
   margin-right:20px;
 }
-.div_img_movie {
+.div_img_movie, .imgDirector{
     cursor: pointer;
     border: 5px double #D8D3CE;
     border-radius: 10px;
@@ -378,35 +375,59 @@ footer{
   color: #ffffff;
 }
 /* Desde acá comienza el estilo para la pagina de peliculas */
-#paginaPeliculas {
-    display:none;
-    position: relative;
-    height: 100vh;
-    width: 95vw;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+
 #paginaIndividualPeliculas{
   display: flex;
   position: relative;
   height: 100vh;
   width: 95vw;
-  background: red;
   justify-content: center;
   flex-wrap: wrap;
 }
-#contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
-  display: flex;
-  background-color: blue;
-  width: 90%;
-  height: 90%;
-}
+
 .carruselPeliculas__pgPeliculas{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 30px 60px;
   }
+/* Desde acá comienza el estilo para página de directores */
+#paginaDirectores {
+  display:none;
+  width: 95vw;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: green;
+}
+.contenedorGlobalDirectores{
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background-color: red;
+  justify-content: space-around;
+  align-items: center;
+  
+  
+}
+#nombreDirectores__paginaDirectores{
+  margin-top: 20px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+.descriptionDirector{
+  font-family: 'Mali', cursive;
+  font-size: 18px;
+  display: flex;
+  background-color: white;
+  width: 50%;
+  height: 40%;
+  margin-bottom: 0%;
+}
+.imgDirector{
+  margin: 70px 0;
+}
+
 
 
   @media (max-width: 768px){
@@ -579,7 +600,7 @@ footer{
   background: #D0A50E;
   color: #FFF;
 }
-#DescripcionPelicula{
+#DescripcionPelicula, .descriptionDirector{
   display: flex;
   align-items: center;
   justify-content: center;
