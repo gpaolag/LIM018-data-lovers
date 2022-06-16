@@ -33,7 +33,7 @@ header{
   }
 #iconoHeader{
       margin-left: 30px;
-      align-self: center;
+      align-self: flex-start;
   }
 .studio {
   font-family: 'Permanent Marker', cursive;
@@ -48,12 +48,12 @@ header{
   padding-left:20px;
   text-shadow: 0 0 12px #000, 0 0  15px #0000FF;  
 }
-  .nav-menu{
+  .nav-menu, .listaDirectores{
       display: flex;
       margin-right: 30px;
       list-style: none;
   }
-  .nav-menu-item{
+  .nav-menu-item {
       font-size: 18px;
       margin: 0 10px;
       line-height: 60px;
@@ -62,7 +62,7 @@ header{
       padding: 8px 10px;
       border-radius: 10px
   }
-  .nav-menu-link:hover{
+  .nav-menu-link:hover, .submenuDirector_items:hover{
       background-color: #6B7382;
       transition: 0.5s;
   }
@@ -75,6 +75,31 @@ header{
       line-height: 50px;
       display: none;
   }
+
+  /* manipulación del hover para directores/submenú */
+  .listaDirectores{
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: -70px;
+  }
+  .submenuDirector_items{
+    display: flex;
+    justify-content: center;
+    width: 240px;
+    line-height: 30px;
+    border-radius: 10px
+  }
+  .submenuDirector{
+    color: #fff;
+    text-decoration: none;
+  }
+  .nav-menu-item:hover > ul{
+    display: flex;
+  }
+
   /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
   #contenedorCarrusel, .carruselPeliculas{
     display: flex;
