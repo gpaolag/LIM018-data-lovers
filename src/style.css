@@ -1,572 +1,574 @@
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body{
-      background: #11348F;       /* solo para ver el texto hasta que lo acomode */
-  }
-   /*Estilo para el header de todas las páginas */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url(img/fondo_principal.jpg);
+background-attachment: fixed;
+}/* solo para ver el texto hasta que lo acomode */
+ /*Estilo para el header de todas las páginas */
 header{
-    font-family: 'Mali', cursive;
-    background: #000000;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  a{
-    cursor:pointer;
-  }
+  font-family: 'Mali', cursive;
+  background: #000000;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+a{
+  cursor:pointer;
+}
 .nav{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 992px;
-      margin: 0 auto;
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 992px;
+    margin: 0 auto;
+}
 .nav-link{
-      color: #fff;
-      text-decoration: none;
-  }
+    color: #fff;
+    text-decoration: none;
+}
 #iconoHeader{
-      margin-left: 30px;
-      align-self: center;
-  }
+    margin-left: 30px;
+    align-self: center;
+}
 .studio {
-  font-family: 'Permanent Marker', cursive;
-  font-weight:800;
-  font-size:50px;
-  padding:20px;
-  text-shadow: 0 0 12px #000, 0 0 15px #0000FF;  
+font-family: 'Permanent Marker', cursive;
+font-weight:800;
+font-size:50px;
+padding:20px;
+text-shadow: 0 0 12px #000, 0 0 15px #0000FF;  
 }
 .subtitulo {
-  font-family: 'Mali', cursive;
-  font-size:22px;
-  padding-left:20px;
-  text-shadow: 0 0 12px #000, 0 0  15px #0000FF;  
+font-family: 'Mali', cursive;
+font-size:22px;
+padding-left:20px;
+text-shadow: 0 0 12px #000, 0 0  15px #0000FF;  
 }
-  .nav-menu{
-      display: flex;
-      margin-right: 30px;
-      list-style: none;
-  }
-  .nav-menu-item{
-      font-size: 18px;
-      margin: 0 10px;
-      line-height: 60px;
-  }
-  .nav-menu-link{
-      padding: 8px 10px;
-      border-radius: 10px
-  }
-  .nav-menu-link:hover{
-      background-color: #6B7382;
-      transition: 0.5s;
-  }
-  .nav-toggle{
-      color: #fff;
-      background: none;
-      border: none;
-      font-size: 30px;
-      padding: 0 20px;
-      line-height: 50px;
-      display: none;
-  }
-  /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
-  #contenedorCarrusel, .carruselPeliculas{
+.nav-menu{
     display: flex;
-    align-items: center;
-    position: relative;
-    padding: auto;
-    overflow: hidden;
-  }
+    margin-right: 30px;
+    list-style: none;
+}
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 60px;
+}
+.nav-menu-link{
+    padding: 8px 10px;
+    border-radius: 10px
+}
+.nav-menu-link:hover{
+    background-color: #6B7382;
+    transition: 0.5s;
+}
+.nav-toggle{
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 50px;
+    display: none;
+}
+/*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
+#contenedorCarrusel, .carruselPeliculas{
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: auto;
+  overflow: hidden;
+}
 
 #contenedorCarrusel .flechaIzquierda, #contenedorCarrusel .flechaDerecha{
-  position: absolute;
-  border: none;
-  background: rgb(255, 255, 255, 0.3);
-  font-size: 40px;
-  height:35%;
-  align-self: center;
-  line-height: 40px;
-  width: 50px;
-  color: #000;
-  cursor: pointer;
-  z-index: 100px;
-  transition: .2s ease all;
+position: absolute;
+border: none;
+background: rgb(255, 255, 255, 0.3);
+font-size: 40px;
+height:35%;
+align-self: center;
+line-height: 40px;
+width: 50px;
+color: #000;
+cursor: pointer;
+z-index: 100px;
+transition: .2s ease all;
 }
 
 #contenedorCarrusel .flechaIzquierda{
-  left: 0;
+left: 0;
 }
 
 #contenedorCarrusel .flechaDerecha{
-  right: 0;
+right: 0;
 }
 
 #contenedorCarrusel .flechaIzquierda:hover, #contenedorCarrusel .flechaDerecha:hover{
-  background: rgba(255, 255 , 255, 0.7);
-  transition: 0.5s;
+background: rgba(255, 255 , 255, 0.7);
+transition: 0.5s;
 }
 
 #contenedorCarrusel{
-  height: 100%;
-  width: 70%;
-  padding: 20px 0;
+height: 100%;
+width: 70%;
+padding: 20px 0;
 }
 #contenedorCarrusel .carruselPeliculas{
-  display: flex;
-  flex-wrap: nowrap;
-  scroll-behavior: smooth;
+display: flex;
+flex-wrap: nowrap;
+scroll-behavior: smooth;
 }
 
 /*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
 .div_content_movies {
-  padding-left:10px;
-  padding-right:10px;
-  margin: 10px;
+padding-left:10px;
+padding-right:10px;
+margin: 10px;
 }
 /* Al pasar el ratón por la peli, aumenta su tamaño */
 .div_content_movies:hover{
-  transform: scale(1.10);
+transform: scale(1.10);
 }
 .img_movie {
-  min-width:120px;
-  max-width: 150px;
-  max-height: 150px;
-  border: 5px solid #D0A50E;
-  margin-right:20px;
+min-width:120px;
+max-width: 150px;
+max-height: 150px;
+border: 5px solid #D0A50E;
+margin-right:20px;
 }
 .div_img_movie {
-    cursor: pointer;
-    border: 5px double #D8D3CE;
-    border-radius: 10px;
-    width: 226px;
-    height: 310px;
+  cursor: pointer;
+  border: 5px double #D8D3CE;
+  border-radius: 10px;
+  width: 226px;
+  height: 310px;
 }
 .contenedor_section_h3 {
-  font-family: 'Mali', cursive;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  text-align: center;
-  color: #FFFFFF;
+font-family: 'Mali', cursive;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+text-align: center;
+color: #FFFFFF;
 }
 .section_h2{
-  font-family: 'Permanent Marker', cursive;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  text-align: center;
-  color: #D0A50E;
-  margin:10px;
+font-family: 'Permanent Marker', cursive;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+text-align: center;
+color: #D0A50E;
+margin:10px;
 }
 .films-titles{
-    display: flex;
-    font-family: 'Mali', cursive;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #FFFFFF;
-    margin:5px;
-    justify-content: center;
-    width: 200px;
-  }
-
-.div_best_movies {
-  min-width: 330px;
-  min-height: 160px;
-  display: inline-flex;
-  padding: 5px 20px 10px 20px;
-  justify-content: space-between;
-  align-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-  flex-direction: row;
-}
-.best_textos {
-  display:flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.back-principal {
-  padding:30px;
-  padding-top:60px;
-  padding-bottom:40px !important;
-  margin: -20px 0px 0px 0px;
-  background-image: url(img/fondo2.jpg);
-  background-repeat: repeat;
-  background-size: cover;
-  min-height:800px;
-  }
-.secciones {
-    display:inline-block;
-  }
-  
-   /*Estilo para el footer de todas las páginas */
-footer{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      background: #3D3D3D;
-      position: fixed;
-      width: 100%;
-      height: 20px;
-      bottom: 0;
-      left: 0;
-   }
-  /* Estilo para la cabecera de la Página Principal */
-.cabecera{
-    margin-top: 60px;
-    margin-bottom:0px;
-    display: inline-flex;
-    background-image: url('img/slider.png');
-    justify-content: center;
-    background-size: 1600px 500px;
-    height: 500px;
-    color: #fff;
-    width:100%;
-    flex-direction: column;
-    align-items: baseline;
-    align-content: stretch;
-    flex-wrap: wrap;
-  }
-.div_slider{
-    width:50%;
-    display: flex;
-    align-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-.dragon {
-    padding:30px;
-    align-items: center;
-  }
-  
-.accesosFijos{
-      margin-left: 30px;
-      color: #fff;
-  }
-.barraBusqueda{
-  background-color: rgb(46, 53, 97, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-  }
-
-#inputBuscar{
-    border-radius: 10px;
-    min-width:260px;
-    height:40px;
-    margin: 10px;
-    margin-right: 20px;
-    padding-left:10px;
-  }
-#lupaBusqueda{
-      height: 20px;
-      margin-left: 5px;
-  }
-#btnBuscar{
-    background: #D0A50E;
-    border: 1;
-    cursor: pointer;
-    align-self: center;
-    padding:5px 10px 3px 10px;
-    border-radius:25px;
-  }
-#paginaPrincipal{
-      display: flex;
-      width: 100%;
-      height: 100%;
-  }
-.carruselPeliculas{
-    display: flex;
-    width: 100%;
-    height: 390px;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    flex-direction: row;
- }
-#topTres{
-    border: 2px solid #fff;
-    width: 25%;
-    height: auto;
-    margin: auto;
-  }
-#botonesOrdenar{
-    display: flex;
-    padding-left: 30px;
-    flex-wrap: wrap;
-  }
-#div_buscador{
-    display: flex;
-    height: 100%;
-    justify-self: flex-end;
-    padding-right: 30px;
-  }
-#txtFilmsAclamados{
-    text-align: center;
-    font-family: 'Mali', cursive;
-    margin-bottom: 10px;
-    justify-content: center;
-    padding: 10px;
-    background:#363E74;
-    color: #FFF;
-  }
-#filmsAclamados{
-
-      width: 80%;
-      height: 80%;
-      margin: auto;
-      border-radius: 20px;
-  }
-.btnNavegar {
-  background:#D0A50E;
-  color: #000000;
-  padding:10px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin:8px;
-  font-family: 'Mali', cursive;
-  font-size: 16px;
-  font-weight:600;
-}
-.btnNavegar:hover, #btnBuscar:hover {
-  background:#e5c348;
-  color: #ffffff;
-}
-/* Desde acá comienza el estilo para la pagina de peliculas */
-#paginaPeliculas {
-    display:none;
-    position: relative;
-    height: 100vh;
-    width: 95vw;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-#paginaIndividualPeliculas{
   display: flex;
-  position: relative;
-  height: 100vh;
-  width: 95vw;
-  background: red;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-#contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
-  display: flex;
-  background-color: blue;
-  width: 90%;
-  height: 90%;
-}
-.carruselPeliculas__pgPeliculas{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px 60px;
-  }
-
-
-  @media (max-width: 768px){
-   /*Estilo para el header de todas las páginas en dispositivos móviles*/
-    body{
-      padding-top: 50px;
-    }
-    header{
-      height: 50px;
-    }
-    .back-principal {
-      padding-left: 10px;
-      padding-top: 30px;
-    }
-    .cabecera{
-      margin-top: 0%;
-      display:block;
-    }
-    .barraBusqueda{
-      display:block;
-    }
-    .div_slider {
-      display:block;
-    }
-    #iconoHeader{
-      height: 40px;
-      width: auto;
-    }
-    /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
-    #contenedorCarrusel {
-      width: 100%;
-    }
-    #contenedorCarrusel .carruselPeliculas{
-      display: grid;
-      grid-template-columns: repeat(1,1fr);
-      gap: 20px;
-      overflow: visible;
-      align-content: center;
-      justify-content: center;
-    }
-/*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
-    .carruselPeliculas{
-      width: 100%;
-      height: 100%;
-      margin-top: 30px;
-      overflow: visible;
-    }
-    #topTres, #txtFilmsAclamados, #contenedorCarrusel .flechaIzquierda, #contenedorCarrusel .flechaDerecha {
-      display: none;
-  }
-
-    #div_buscador {
-      display:block;
-    }
-    .nav-menu{
-        flex-direction: column;
-        align-items: center;
-        background-color: #43587F;
-        position: fixed;
-        top: 50px;
-        width: 60%;
-        padding: 20px 0%;
-        height: calc(35% - 60px);
-        overflow-y: auto;
-        left: 100%;
-        transition: left 0.5s;
-    }
-    .nav-menu-item{
-        line-height: 30px;
-    }
-    .nav-menu-link:hover{
-        background: #D8D3CE;
-        color: #4889FF;
-    }
-    .nav-toggle{
-        display: block;
-        cursor: pointer;
-    }
-    .nav-menu_visible{
-        left: 0;
-    }
-     /*Estilo para el footer de todas las páginas en dispositivos móviles*/
-     footer{
-         height: 20px;
-     }
-     
-  }
-
-/* Desde acá la vista para las peliculas individuales */
-#Peliculas{
-  background:rgb(21, 176, 104);
-  padding: 30px;;
-  display: none;
-  flex-direction: column;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-#contenedorPelicula{
-  display: flex;
-  padding: 30px;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-}
-#carruselPersonajes{
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#posterPelicula{
-  min-width: 30%;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  display: flex;
-}
-.titulos{
-  padding:5px;
-  border: 2px solid;
-  width: 350px;
-  text-align: center;
-  font-family: 'Mali', cursive;
-  margin-bottom: 20px;
-  justify-content: center;
-  background: #363E74;
-  color: #FFF;
-}
-.bloque_descripciones {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-}
-#infoRelacionada_Individual{
-  display: flex;
-  min-width: 100%;
-}
-.infoRelacionada{
-  width: 100%;
-  margin: 10px;
-}
-.descripcion_movie{
   font-family: 'Mali', cursive;
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center;
-  color: #565252;
-  margin: 0px 15px 0px 15px;
-  padding: 15px;
-  background: #D8D3CE;
-  border-radius: 21px;
-}
-.descripcion_titles{
   font-size: 16px;
-  margin-bottom:20px;
-  border: 2px solid;
+  line-height: 20px;
   text-align: center;
-  font-family: 'Mali', cursive;
+  color: #FFFFFF;
+  margin:5px;
   justify-content: center;
-  background: #D0A50E;
-  color: #FFF;
+  width: 200px;
 }
-#DescripcionPelicula{
+
+.div_best_movies {
+min-width: 330px;
+min-height: 160px;
+display: inline-flex;
+padding: 5px 20px 10px 20px;
+justify-content: space-between;
+align-content: center;
+flex-wrap: nowrap;
+align-items: center;
+flex-direction: row;
+}
+.best_textos {
+display:flex;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.back-principal {
+padding:30px;
+padding-top:60px;
+padding-bottom:40px !important;
+margin: -20px 0px 0px 0px;
+background-image: url(img/fondo_principal.jpg);
+background-attachment: fixed;
+}
+.secciones {
+  display:inline-block;
+}
+
+ /*Estilo para el footer de todas las páginas */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #3D3D3D;
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    left: 0;
+ }
+/* Estilo para la cabecera de la Página Principal */
+.cabecera{
+  margin-top: 60px;
+  margin-bottom:0px;
+  display: inline-flex;
+  background-image: url('img/slider.png');
+  justify-content: center;
+  background-size: 1600px 500px;
+  height: 500px;
+  color: #fff;
+  width:100%;
+  flex-direction: column;
+  align-items: baseline;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+.div_slider{
+  width:50%;
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dragon {
+  padding:30px;
+  align-items: center;
+}
+
+.accesosFijos{
+    margin-left: 30px;
+    color: #fff;
+}
+.barraBusqueda{
+background-color: rgb(46, 53, 97, 0.5);
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-self: center;
-  margin:10px;  
+  justify-content:space-around;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
-#carruselPers_Relacionados{
+
+#inputBuscar{
+  border-radius: 10px;
+  min-width:260px;
+  height:40px;
+  margin: 10px;
+  margin-right: 20px;
+  padding-left:10px;
+}
+#lupaBusqueda{
+    height: 20px;
+    margin-left: 5px;
+}
+#btnBuscar{
+  background: #D0A50E;
+  border: 1;
+  cursor: pointer;
+  align-self: center;
+  padding:5px 10px 3px 10px;
+  border-radius:25px;
+}
+#paginaPrincipal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.carruselPeliculas{
+  display: flex;
   width: 100%;
   height: 390px;
+  align-items: center;
   flex-wrap: wrap;
   align-content: flex-start;
   flex-direction: row;
+}
+#topTres{
+  border: 2px solid #fff;
+  width: 25%;
+  height: auto;
+  margin: auto;
+}
+#botonesOrdenar{
   display: flex;
-  justify-content: space-around;
+  padding-left: 30px;
+  flex-wrap: wrap;
+}
+#div_buscador{
+  display: flex;
+  height: 100%;
+  justify-self: flex-end;
+  padding-right: 30px;
+}
+#txtFilmsAclamados{
+  text-align: center;
+  font-family: 'Mali', cursive;
+  margin-bottom: 10px;
+  justify-content: center;
+  padding: 10px;
+  background:#363E74;
+  color: #FFF;
+}
+#filmsAclamados{
+
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 20px;
+}
+.btnNavegar {
+background:#D0A50E;
+color: #000000;
+padding:10px;
+border-radius: 10px;
+cursor: pointer;
+margin:8px;
+font-family: 'Mali', cursive;
+font-size: 16px;
+font-weight:600;
+}
+.btnNavegar:hover, #btnBuscar:hover {
+background:#e5c348;
+color: #ffffff;
+}
+/* Desde acá comienza el estilo para la pagina de peliculas */
+#paginaPeliculas {
+  display:none;
+  position: relative;
+  height: 100vh;
+  width: 95vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#paginaIndividualPeliculas{
+display: flex;
+position: relative;
+height: 100vh;
+width: 95vw;
+background: red;
+justify-content: center;
+flex-wrap: wrap;
+}
+#contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
+display: flex;
+background-color: blue;
+width: 90%;
+height: 90%;
+}
+.carruselPeliculas__pgPeliculas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 60px;
+}
+
+
+@media (max-width: 768px){
+ /*Estilo para el header de todas las páginas en dispositivos móviles*/
+  body{
+    padding-top: 50px;
+  }
+  header{
+    height: 50px;
+  }
+  .back-principal {
+    padding-left: 10px;
+    padding-top: 30px;
+  }
+  .cabecera{
+    margin-top: 0%;
+    display:block;
+  }
+  .barraBusqueda{
+    display:block;
+  }
+  .div_slider {
+    display:block;
+  }
+  #iconoHeader{
+    height: 40px;
+    width: auto;
+  }
+  /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
+  #contenedorCarrusel {
+    width: 100%;
+  }
+  #contenedorCarrusel .carruselPeliculas{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    overflow: visible;
+    align-content: center;
+    justify-content: center;
+  }
+/*---------------Hasta acá estoy agregando el estilo para el carrusel -------------------- */
+  .carruselPeliculas{
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    overflow: visible;
+  }
+  #topTres, #txtFilmsAclamados, #contenedorCarrusel .flechaIzquierda, #contenedorCarrusel .flechaDerecha {
+    display: none;
+}
+
+  #div_buscador {
+    display:block;
+  }
+  .nav-menu{
+      flex-direction: column;
+      align-items: center;
+      background-color: #43587F;
+      position: fixed;
+      top: 50px;
+      width: 60%;
+      padding: 20px 0%;
+      height: calc(35% - 60px);
+      overflow-y: auto;
+      left: 100%;
+      transition: left 0.5s;
+  }
+  .nav-menu-item{
+      line-height: 30px;
+  }
+  .nav-menu-link:hover{
+      background: #D8D3CE;
+      color: #4889FF;
+  }
+  .nav-toggle{
+      display: block;
+      cursor: pointer;
+  }
+  .nav-menu_visible{
+      left: 0;
+  }
+   /*Estilo para el footer de todas las páginas en dispositivos móviles*/
+   footer{
+       height: 20px;
+   }
+   
+}
+
+/* Desde acá la vista para las peliculas individuales */
+#Peliculas{
+padding: 30px;;
+display: none;
+flex-direction: column;
+align-content: center;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+height:100%;
+}
+#contenedorPelicula{
+display: flex;
+background: rgba(213, 213, 213, 0.33);
+padding: 30px;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: row;
+margin-bottom:30px;
+border-radius:15px;
+}
+#carruselPersonajes{
+width:100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+#posterPelicula{
+min-width: 30%;
+align-content: center;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+display: flex;
+}
+.titulos{
+padding:5px;
+border: 2px solid;
+width: 350px;
+text-align: center;
+font-family: 'Mali', cursive;
+margin-bottom: 20px;
+justify-content: center;
+background: #363E74;
+color: #FFF;
+}
+.bloque_descripciones {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: flex-start;
+align-items: center;
+}
+#infoRelacionada_Individual{
+display: flex;
+min-width: 100%;
+}
+.infoRelacionada{
+width: 100%;
+margin: 10px;
+}
+.descripcion_movie{
+font-family: 'Mali', cursive;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 1.2;
+text-align: center;
+color: #565252;
+margin: 0px 15px 0px 15px;
+padding: 15px;
+background: #D8D3CE;
+border-radius: 21px;
+}
+.descripcion_titles{
+font-size: 16px;
+margin-bottom:20px;
+border: 2px solid;
+text-align: center;
+font-family: 'Mali', cursive;
+justify-content: center;
+background: #D0A50E;
+color: #212121;
+}
+#DescripcionPelicula{
+display: flex;
+align-items: center;
+justify-content: center;
+justify-self: center;
+margin:10px;  
+}
+#carruselPers_Relacionados{
+width: 100%;
+height: 100%;
+flex-wrap: wrap;
+align-content: flex-start;
+flex-direction: row;
+display: flex;
+justify-content: space-around;
 }
