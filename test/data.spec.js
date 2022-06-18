@@ -174,19 +174,6 @@ describe('newArrayPeople()', () => {
   });
 });
 
-
-/* const peopleFilms=[
-  {
-    "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-    "title": "Kiki's Delivery Service",
-    "people": [
-      {
-        "id": "4151abc6-1a9e-4e6a-5678-aac05ra641js",
-        "name": "Kiki",
-        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/5/59/Kiki.jpg"}
-    ]}];
-     */
-
 const resultPeopleFilms2=[{
   "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
   "name": "Pazu",
