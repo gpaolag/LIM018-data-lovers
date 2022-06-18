@@ -34,7 +34,7 @@ a{
 }
 #iconoHeader{
     margin-left: 30px;
-    align-self: center;
+    align-self: flex-start;
 }
 .studio {
 font-family: 'Permanent Marker', cursive;
@@ -49,33 +49,55 @@ font-size:22px;
 padding-left:20px;
 text-shadow: 0 0 12px #000, 0 0  15px #0000FF;  
 }
-.nav-menu{
-    display: flex;
-    margin-right: 30px;
-    list-style: none;
-}
-.nav-menu-item{
-    font-size: 18px;
-    margin: 0 10px;
-    line-height: 60px;
-}
-.nav-menu-link{
-    padding: 8px 10px;
-    border-radius: 10px
-}
-.nav-menu-link:hover{
-    background-color: #6B7382;
-    transition: 0.5s;
-}
-.nav-toggle{
-    color: #fff;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 0 20px;
-    line-height: 50px;
+.nav-menu, .listaDirectores{
+      display: flex;
+      margin-right: 30px;
+      list-style: none;
+  }
+  .nav-menu-item {
+      font-size: 18px;
+      margin: 0 10px;
+      line-height: 60px;
+  }
+  .nav-menu-link{
+      padding: 8px 10px;
+      border-radius: 10px
+  }
+  .nav-menu-link:hover, .submenuDirector_items:hover{
+      background-color: #6B7382;
+      transition: 0.5s;
+  }
+  .nav-toggle{
+      color: #fff;
+      background: none;
+      border: none;
+      font-size: 30px;
+      padding: 0 20px;
+      line-height: 50px;
+      display: none;
+  }
+
+  /* manipulación del hover para directores/submenú */
+  .listaDirectores{
     display: none;
-}
+    flex-direction: column;
+    background-color: #000;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: -70px;
+  }
+  .submenuDirector_items{
+    display: flex;
+    justify-content: center;
+    width: 240px;
+    line-height: 30px;
+    border-radius: 10px
+  }
+  .submenuDirector{
+    color: #fff;
+    text-decoration: none;
+  }
+
 /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
 #contenedorCarrusel, .carruselPeliculas{
   display: flex;
@@ -141,12 +163,13 @@ max-height: 150px;
 border: 5px solid #D0A50E;
 margin-right:20px;
 }
-.div_img_movie {
-  cursor: pointer;
-  border: 5px double #D8D3CE;
-  border-radius: 10px;
-  width: 226px;
-  height: 310px;
+
+.div_img_movie, .imgDirector{
+    cursor: pointer;
+    border: 5px double #D8D3CE;
+    border-radius: 10px;
+    width: 226px;
+    height: 310px;
 }
 .contenedor_section_h3 {
 font-family: 'Mali', cursive;
@@ -351,25 +374,46 @@ font-weight:600;
 background:#e5c348;
 color: #ffffff;
 }
-/* Desde acá comienza el estilo para la pagina de peliculas */
-#paginaPeliculas {
+
+/* Desde acá comienza el estilo para página de directores */
+#paginaDirectores {
   display:none;
-  position: relative;
-  height: 100vh;
   width: 95vw;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: green;
 }
-#paginaIndividualPeliculas{
-display: flex;
-position: relative;
-height: 100vh;
-width: 95vw;
-background: red;
-justify-content: center;
-flex-wrap: wrap;
+.contenedorGlobalDirectores{
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background-color: red;
+  justify-content: space-around;
+  align-items: center;
+  
+  
 }
-#contenedorGlobalPeliculas, #contenedorPeliculas_Individual{
+#nombreDirectores__paginaDirectores{
+  margin-top: 20px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+.descriptionDirector{
+  font-family: 'Mali', cursive;
+  font-size: 18px;
+  display: flex;
+  background-color: white;
+  width: 50%;
+  height: 40%;
+  margin-bottom: 0%;
+}
+.imgDirector{
+  margin: 70px 0;
+}
+
+
+#contenedorGlobalPeliculas{
 display: flex;
 background-color: blue;
 width: 90%;
@@ -381,6 +425,7 @@ height: 90%;
   justify-content: space-between;
   padding: 30px 60px;
 }
+
 
 
 @media (max-width: 768px){
@@ -556,13 +601,14 @@ justify-content: center;
 background: #D0A50E;
 color: #212121;
 }
-#DescripcionPelicula{
-display: flex;
-align-items: center;
-justify-content: center;
-justify-self: center;
-margin:10px;  
-}
+
+#DescripcionPelicula, .descriptionDirector{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin:10px;  
+
 #carruselPers_Relacionados{
 width: 100%;
 height: 100%;

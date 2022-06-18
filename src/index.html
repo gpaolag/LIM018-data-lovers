@@ -41,8 +41,17 @@
             >
           </li>
           <li class="nav-menu-item">
-            <a id="directores" class="nav-menu-link nav-link">DIRECTORES</a>
-          </li>
+            <li class="nav-menu-item"><a id="directores" class="nav-menu-link nav-link">DIRECTORES</a>
+              <ul id ="listaDirectores" class="listaDirectores">
+                <li id ="dir1" class="submenuDirector_items"><a class="submenuDirector submenuDir">HAYOA MIYAZAKI</a></li>
+                <li id ="dir2" class="submenuDirector_items"><a class="submenuDirector submenuDir">ISAO TAKAHADA</a></li>
+                <li id ="dir3" class="submenuDirector_items"><a class="submenuDirector submenuDir">TOMOMI MOCHIZUKI</a></li>
+                <li id ="dir4" class="submenuDirector_items"><a class="submenuDirector submenuDir">YOSHIFUMI KONDO</a></li>
+                <li id ="dir5" class="submenuDirector_items"><a class="submenuDirector submenuDir">HIROYUKI MORITA</a></li>
+                <li id ="dir6" class="submenuDirector_items"><a class="submenuDirector submenuDir">GORO MIYAZAKI</a></li>
+              </ul>
+            </li>
+          </li>  
           <li class="nav-menu-item">
             <a id="locaciones" class="nav-menu-link nav-link">LOCACIONES</a>
           </li>
@@ -105,13 +114,24 @@
         </section>
       </section>
 
-      <section id="paginaPeliculas">
-        <div id="tituloPeliculas__paginaPeliculas" class="titulos">
-          TODAS LAS PELICULAS
+      <section id="paginaDirectores">
+        <div id="nombreDirectores__paginaDirectores" class="titulos">NOMBRE APELLIDO
         </div>
-        <div id="contenedorGlobalPeliculas"></div>
+        <div id="contenedorGlobalDirectores" class="contenedorGlobalDirectores">
+          <div id="imgDirector" class="imgDirector"></div>
+          <div id="descriptionDirector" class="descriptionDirector"></div>
+          <div>
+            <div class="relacioandasDirectores titulos" id="relacioandasDirectores"></div>
+            <div class="contRelacionadasDirectores"></div>
+          </div>  
+        </div>
       </section>
 
+      <section id="paginaLocaciones" class="paginaLocaciones">
+
+      </section>
+
+      
       <section id="Peliculas">
         <div id="tituloPelicula" class="titulos">TITULO DE LA PELICULA</div>
         <div id="contenedorPelicula">
