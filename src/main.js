@@ -248,7 +248,7 @@ function showDirector(dataDirector){
     dataDirector.forEach((allDirectors) =>{
         const divDirector = document.createElement("div");
         divDirector.classList.add("contenedorGlobalDirectores");
-        divDirector.innerHTML=`<div id="nombreDirectores__paginaDirectores" class="titulos">${allDirectors.name}</div><img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
+        divDirector.innerHTML=`<div  id="nombreDirectores__paginaDirectores" class="titulos">${allDirectors.name}</div><img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
         <b><h3 id="descriptionDirector" class="descriptionDirector">${allDirectors.description}</h3></b><div id="contRelacionado__PgDirectores" class="contRelacionado__PgDirectores"><div class="relacionadasDirectores titulos" id="relacionadasDirectores">PELICULAS DIRIGIDAS</div><div id="contRelacionadasDirectores" class="contRelacionadasDirectores"></div></div>`;
         divDirector.setAttribute("id", allDirectors.id);
         mainDirectores.appendChild(divDirector);
