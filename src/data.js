@@ -51,6 +51,8 @@ export function newArrayPeople(films){
     for(let i=0; i<films.length; i++){
         for(let j=0;j<films[i].people.length;j++){
             let variable = {"id": `${films[i].people[j].id}`,
+                            "gender": `${films[i].people[j].gender}`,
+                            "specie": `${films[i].people[j].specie}`,
                             "name": `${films[i].people[j].name}`,
                             "img": `${films[i].people[j].img}`};
             peoplelist.push(variable);
@@ -72,3 +74,46 @@ export function peopleforMovie(films, id){
      }
      return peoplelist;
  }
+
+ 
+ export function SearchDirector(directores, id){
+    let newDirector=[];
+    for(let i=0;i<directores.length; i++){
+        if(directores[i].id == id){
+            let arrayDirect ={"id":`${directores[i].id}`,
+                          "name":`${directores[i].name}`,
+                          "description":`${directores[i].description}`,
+                          "img":`${directores[i].img}`};
+            newDirector.push(arrayDirect);
+        }
+     }
+     return newDirector;
+}
+
+ export function filterSpecie(peoplelist){
+    let orderSpecie = [];
+    let newOrder = peoplelist.sort((a,b) =>{
+        if(a.specie>b.specie){
+            return 1;
+        }if(a.specie<b.specie){
+            return -1;
+        }
+        return 0;
+    })
+    orderSpecie = newOrder;
+    return orderSpecie;
+}
+
+export function filterGender(peoplelist){
+    let orderGender = [];
+    let newOrder = peoplelist.sort((a,b) =>{
+        if(a.gender>b.gender){
+            return 1;
+        }if(a.gender<b.gender){
+            return -1;
+        }
+        return 0;
+    })
+    orderGender = newOrder;
+    return orderGender;
+}
