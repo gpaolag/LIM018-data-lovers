@@ -353,7 +353,6 @@ background-color: rgb(46, 53, 97, 0.5);
   color: #FFF;
 }
 #filmsAclamados{
-
     width: 80%;
     height: 80%;
     margin: auto;
@@ -370,6 +369,9 @@ font-family: 'Mali', cursive;
 font-size: 16px;
 font-weight:600;
 }
+#gender, #specie{
+  display: none;
+}
 .btnNavegar:hover, #btnBuscar:hover {
 background:#e5c348;
 color: #ffffff;
@@ -377,57 +379,69 @@ color: #ffffff;
 
 /* Desde acá comienza el estilo para página de directores */
 #paginaDirectores {
+  margin-top: 10px;
   display:none;
   width: 95vw;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: green;
 }
 .contenedorGlobalDirectores{
+  border-radius: 50px;
   display: flex;
   width: 100vw;
   height: auto;
-  background-color: red;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  
-  
 }
 #nombreDirectores__paginaDirectores{
-  margin-top: 20px;
+  position: absolute;
+  margin: 30px;
   height: 40px;
   text-align: center;
   border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 120px;
+}
+.contRelacionado__PgDirectores{
+  display: flex;
+  position: absolute;
+  margin-top: 40%;
+  width: auto;
+  flex-direction: column;
+}
+#relacioandasDirectores{
+  margin-bottom: 30px;
+  align-self: center;
+  border-radius: 10px;
+}
+.contRelacionadasDirectores{
+  background-color: #000;
+  height: 200px;
 }
 .descriptionDirector{
+  padding: 30px;
+  border-radius: 10px;
   font-family: 'Mali', cursive;
   font-size: 18px;
   display: flex;
-  background-color: white;
-  width: 50%;
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 80%;
   height: 40%;
   margin-bottom: 0%;
+  text-align: center;
 }
+
 .imgDirector{
-  margin: 70px 0;
+  margin: 80px;
+  cursor:auto;
 }
 
-
-#contenedorGlobalPeliculas{
-display: flex;
-background-color: blue;
-width: 90%;
-height: 90%;
-}
-.carruselPeliculas__pgPeliculas{
+.contRelacionado__PgDirectores{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 30px 60px;
+  width: 100%;
+  height: auto;
+  justify-content: center;
 }
-
-
-
 @media (max-width: 768px){
  /*Estilo para el header de todas las páginas en dispositivos móviles*/
   body{
@@ -513,7 +527,12 @@ height: 90%;
    }
    
 }
-
+.carruselPeliculas__pgPeliculas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 60px;
+}
 /* Desde acá la vista para las peliculas individuales */
 #Peliculas{
 padding: 30px;;
@@ -561,6 +580,8 @@ margin-bottom: 20px;
 justify-content: center;
 background: #363E74;
 color: #FFF;
+align-self: center;
+border-radius: 10px;
 }
 .bloque_descripciones {
 display: flex;
