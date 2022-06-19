@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterSpecie, filterGender } from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterSpecie, filterGender} from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -43,7 +43,8 @@ function showInfoMovies (arrayData){
             document.getElementById("productor_Individual").innerHTML= `  <h3 class="descripcion_titles">PRODUCTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.producer}</h2>`;
             document.getElementById("añoLanzamiento_Individual").innerHTML= `  <h3 class="descripcion_titles">LANZAMIENTO: </H3> <h2 class="descripcion_movie">${filmsPublished.release_date}</h2>`;
             document.getElementById("ranking_Individual").innerHTML= `  <h3 class="descripcion_titles">RANKING : </h3> <h2 class="descripcion_movie">${filmsPublished.rt_score}</h2>`;
-        }
+            document.getElementById("barraBusqueda").style.display="none";
+          }
     });
 }
 
@@ -155,6 +156,9 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("flechaDerecha").style.display="none";
   document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
+  document.getElementById("barraBusqueda").style.display="flex";
+  document.getElementById("gender").style.display="none";
+  document.getElementById("specie").style.display="none";
   showInfoMovies(films);
   document.getElementById("botonesOrdenar").style.display="block";
 });
@@ -171,6 +175,9 @@ personajes_men.addEventListener("click",()=>{
   document.getElementById("contenedorCarrusel").style.width="100%";
   document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
+  document.getElementById("barraBusqueda").style.display="flex";
+  document.getElementById("gender").style.display="flex";
+  document.getElementById("specie").style.display="flex";
   mainmovies.innerHTML = "";
   showInfoPeople(newArrayPeople(films),mainmovies);
   document.getElementById("botonesOrdenar").style.display="none";
@@ -225,7 +232,7 @@ const directores =[
 },
 {
   "id":"dir4",
-  "name": "Yoshifumi Kondo",
+  "name": "Yoshifumi Kondō",
   "description": "Fue un animador japonés que trabajó para Studio Ghibli en sus últimos años. Se esperaba que se convirtiera en uno de los principales directores de Ghibli, junto a Hayao Miyazaki y Isao Takahata pero murió por un aneurisma en 1998. Tenía apenas 47 años de edad. También trabajo como supervisor de animación y diseñador de personajes en el departamento de animación de Ghibli.",
   "img": "https://image.tmdb.org/t/p/w235_and_h235_face/kMGHxgP7tz4diYcGp4P4a7sHsBC.jpg"
 },
@@ -237,7 +244,7 @@ const directores =[
 },
 {
   "id":"dir6",
-  "name": "Goro Miyazaki",
+  "name": "Gorō Miyazaki",
   "description": "Es un arquitecto, director, animador y guionista de animación japonesa. Es también el hijo de Hayao Miyazaki. Inicialmente era reacio a seguir los pasos de su padre y se dedicó al paisajismo antes que a la animación. Sin embargo, después que Toshio Suzuki le convenciera para trabajar en el Museo Ghibli, empezó a relacionarse con el Studio Ghibli.",
   "img": "https://image.tmdb.org/t/p/w500/44FdzDvvVhhiPT3xJXRLnfVgFbs.jpg"}];
 
@@ -260,30 +267,30 @@ function showDirector(dataDirector){
 
 const dir1 = document.getElementById("dir1");
 dir1.addEventListener("click",() =>{
-  pgDirectores("dir1");
+  pgDirectores("Hayao Miyazaki");
 });
 const dir2 = document.getElementById("dir2");
 dir2.addEventListener("click",() =>{
-  pgDirectores("dir2");
+  pgDirectores("Isao Takahata");
 });
 const dir3 = document.getElementById("dir3");
 dir3.addEventListener("click",() =>{
-  pgDirectores("dir3");
+  pgDirectores("Tomomi Mochizuki");
 });
 const dir4 = document.getElementById("dir4");
 dir4.addEventListener("click",() =>{
-  pgDirectores("dir4");
+  pgDirectores("Yoshifumi Kondō");
 });
 const dir5 = document.getElementById("dir5");
 dir5.addEventListener("click",() =>{
-  pgDirectores("dir5");
+  pgDirectores("Hiroyuki Morita");
 });
 const dir6 = document.getElementById("dir6");
 dir6.addEventListener("click",() =>{
-  pgDirectores("dir6");
+  pgDirectores("Gorō Miyazaki");
 });
 
-function pgDirectores(id){
+function pgDirectores(name){
   document.getElementById("paginaDirectores").style.display="flex";
   document.getElementById("paginaPrincipal").style.display="none";
   document.getElementById("Peliculas").style.display="none";
@@ -293,11 +300,10 @@ function pgDirectores(id){
   document.getElementById("gender").style.display="none";
   document.getElementById("specie").style.display="none";
   document.getElementById("barraBusqueda").style.display="none";
-  let arregloDirectores =SearchDirector(directores, id);
+  let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
 }
 
-//para filtrar por género/especie
 
 let btnGender = document.getElementById("gender");
 btnGender.addEventListener("click",()=>{

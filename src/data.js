@@ -76,10 +76,10 @@ export function peopleforMovie(films, id){
  }
 
  
- export function SearchDirector(directores, id){
+ export function SearchDirector(directores, name){
     let newDirector=[];
     for(let i=0;i<directores.length; i++){
-        if(directores[i].id == id){
+        if(directores[i].name == name){
             let arrayDirect ={"id":`${directores[i].id}`,
                           "name":`${directores[i].name}`,
                           "description":`${directores[i].description}`,
@@ -116,4 +116,19 @@ export function filterGender(peoplelist){
     })
     orderGender = newOrder;
     return orderGender;
+}
+
+
+export function relatedDirector(films, director){
+    let newDirector=[];
+    for(let i=0;i<films.length; i++){
+        if(films[i].director == director){
+            let arrayDirect ={"id":`${films[i].id}`,
+                          "title":`${films[i].title}`,
+                          "director":`${films[i].director}`,
+                          "img":`${films[i].poster}`};
+            newDirector.push(arrayDirect);
+        }
+     }
+     return newDirector;
 }
