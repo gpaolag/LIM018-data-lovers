@@ -146,6 +146,7 @@ showBestMovies(principales);
 const peliculas_men=document.getElementById("peliculas_menu");
 peliculas_men.addEventListener("click",()=>{
   document.getElementById("paginaPrincipal").style.display="flex";
+  document.getElementById("paginaDirectores").style.display="none";
   document.getElementById("Peliculas").style.display="none";
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
@@ -164,6 +165,8 @@ personajes_men.addEventListener("click",()=>{
   document.getElementById("Peliculas").style.display="none";
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
+  document.getElementById("flechaIzquierda").style.display="none";
+  document.getElementById("flechaDerecha").style.display="none";
   document.getElementById("paginaDirectores").style.display="none";
   document.getElementById("contenedorCarrusel").style.width="100%";
   document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
