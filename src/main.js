@@ -319,8 +319,6 @@ function pgDirectores(name){
   document.getElementById("cabecera").style.display="none";
   document.getElementById("topTres").style.display="none";
   document.getElementById("botonesOrdenar").style.display="none";
-  document.getElementById("gender").style.display="none";
-  document.getElementById("specie").style.display="none";
   document.getElementById("barraBusqueda").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
