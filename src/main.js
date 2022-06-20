@@ -325,10 +325,7 @@ function pgDirectores(name){
   document.getElementById("barraBusqueda").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
-  let arregloRelatedFilms = relatedDirector(films, name);
   showRelatedFilms(relatedDirector(films, name));
-  // eslint-disable-next-line no-console
-  console.log(arregloRelatedFilms);
 }
 
 
