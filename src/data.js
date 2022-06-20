@@ -69,8 +69,13 @@ export function peopleforMovie(films, id){
        if(films[i].id==id){
          for(let j=0;j<films[i].people.length;j++){
              let variable = {"id": `${films[i].people[j].id}`,
-                             "name": `${films[i].people[j].name}`,
-                             "img": `${films[i].people[j].img}`};
+                            "name": `${films[i].people[j].name}`,
+                            "img": `${films[i].people[j].img}`,
+                            "age": `${films[i].people[j].age}`,
+                            "gender": `${films[i].people[j].gender}`,
+                            "hair_color": `${films[i].people[j].hair_color}`,
+                            "specie": `${films[i].people[j].specie}`,
+                            "eye_color": `${films[i].people[j].eye_color}`};
              peoplelist.push(variable);
          }
        }

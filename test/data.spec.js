@@ -178,8 +178,7 @@ const resultPeople=[
     "eye_color": "Black",
     "hair_color": "Brown",
     "specie": "Human"
-  },
-  {
+  },{
     "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
     "name": "Lusheeta Toel Ul Laputa",
     "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
@@ -197,8 +196,7 @@ const resultPeople=[
       "eye_color": "Black",
       "hair_color": "Brown",
       "specie": "Human"
-    },
-  {
+    }, {
       "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
       "name": "Lusheeta Toel Ul Laputa",
       "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
@@ -222,11 +220,21 @@ describe('newArrayPeople()', () => {
 const resultPeopleFilms2=[{
   "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
   "name": "Pazu",
-  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"},
-{
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+  "gender": "Male",
+  "age": "13",
+  "eye_color": "Black",
+  "hair_color": "Brown",
+  "specie": "Human"
+},{
   "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
   "name": "Lusheeta Toel Ul Laputa",
-  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg"}];
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+  "gender": "Female",
+  "age": "13",
+  "eye_color": "Black",
+  "hair_color": "Black",
+  "specie": "Human"}];
 
 describe('peopleforMovie()', () => {
   it('is a function', () => {
