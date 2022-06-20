@@ -84,7 +84,7 @@ export function peopleforMovie(films, id){
  }
 
  
- export function SearchDirector(directores, name){
+export function SearchDirector(directores, name){
     let newDirector=[];
     for(let i=0;i<directores.length; i++){
         if(directores[i].name == name){
@@ -98,33 +98,15 @@ export function peopleforMovie(films, id){
      return newDirector;
 }
 
- export function filterSpecie(peoplelist){
-    let orderSpecie = [];
-    let newOrder = peoplelist.sort((a,b) =>{
-        if(a.specie>b.specie){
-            return 1;
-        }if(a.specie<b.specie){
-            return -1;
-        }
-        return 0;
-    })
-    orderSpecie = newOrder;
-    return orderSpecie;
-}
-
-export function filterGender(peoplelist){
-    let orderGender = [];
-    let newOrder = peoplelist.sort((a,b) =>{
-        if(a.gender>b.gender){
-            return 1;
-        }if(a.gender<b.gender){
-            return -1;
-        }
-        return 0;
-    })
-    orderGender = newOrder;
-    return orderGender;
-}
+export function filterBySpecie(people,valueFilter){
+    const peopleSpecie=people.filter(x => x.specie === valueFilter);
+    return peopleSpecie;
+  }
+  
+export function filterByGender(people,valueFilter){
+    const peopleGender = people.filter(y => y.gender === valueFilter);
+    return peopleGender;
+  }
 
 export function relatedDirector(films, director){
     let newDirector=[];

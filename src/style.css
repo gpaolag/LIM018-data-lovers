@@ -454,7 +454,7 @@ margin-top: 20px;
     display:block;
   }
   .barraBusqueda{
-    display:block;
+    display:block !important;
   }
   .div_slider {
     display:block;
@@ -718,4 +718,31 @@ justify-content: space-around;
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* select de filtros*/
+.filtersFather {
+  display: none;
+  padding: 20px;
+  flex-wrap: wrap;
+  border: 2px solid;
+  text-align: center;
+  border-radius:10px;
+  font-family: 'Mali', cursive;
+  justify-content: center;
+  font-weight:700;
+  background: #D0A50E;
+  color: #212121;
+}
+.filters {
+  display: flex;
+  padding: 10px;
+  margin:0px 10px;
+  flex-wrap: wrap;
+  border: 2px solid;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  justify-content: center;
+  background: #fbe289;
+  color: #212121;
 }

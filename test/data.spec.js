@@ -1,5 +1,5 @@
 import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
-import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector, relatedDirector} from '../src/data.js';
+import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector, relatedDirector, filterByGender, filterBySpecie} from '../src/data.js';
 
 const pruebas=[
   {
@@ -141,7 +141,7 @@ const pruebaPeople=[
           "age": "13",
           "eye_color": "Black",
           "hair_color": "Black",
-          "specie": "Human"}
+          "specie": "unknow"}
       ]},
   {
     "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe2",
@@ -165,7 +165,7 @@ const pruebaPeople=[
           "age": "13",
           "eye_color": "Black",
           "hair_color": "Black",
-          "specie": "Human"}
+          "specie": "unknow"}
       ]}];
 
 const resultPeople=[
@@ -186,7 +186,7 @@ const resultPeople=[
     "age": "13",
     "eye_color": "Black",
     "hair_color": "Black",
-    "specie": "Human"},
+    "specie": "unknow"},
   {
       "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
       "name": "Pazu",
@@ -204,7 +204,7 @@ const resultPeople=[
       "age": "13",
       "eye_color": "Black",
       "hair_color": "Black",
-      "specie": "Human"}
+      "specie": "unknow"}
   ];
 
 describe('newArrayPeople()', () => {
@@ -234,7 +234,7 @@ const resultPeopleFilms2=[{
   "age": "13",
   "eye_color": "Black",
   "hair_color": "Black",
-  "specie": "Human"}];
+  "specie": "unknow"}];
 
 describe('peopleforMovie()', () => {
   it('is a function', () => {
@@ -242,7 +242,7 @@ describe('peopleforMovie()', () => {
   });
 
   it('returns `resultPeopleFilms`', () => {
-    expect(peopleforMovie(pruebaPeople,"2baf70d1-42bb-4437-b551-e5fed5a87abe")).toEqual(resultPeopleFilms2);
+    expect(peopleforMovie(pruebaPeople,"2baf70d1-42bb-4437-b551-e5fed5a87abe2")).toEqual(resultPeopleFilms2);
 })});
 
 const directores =[
@@ -264,7 +264,7 @@ const resultdirec=[{
   "description": "Es uno de los fundadores de Studio Ghibli, junto con Isao Takahada. Dentro de sus ocupaciones encontramos director de cine de animación, animador, ilustrador, mangaka y productor de anime japonés de renombre. <br> Dentro de sus filmes de animación más populares podemos encontrar El viaje de Chihiro, Mi Vecino Totoro,  La princesa Mononoke y otros más.",
   "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg"
 }
-]
+];
 
 describe('searchDirectores()',()=>{
   it('is a function',()=>{
@@ -311,15 +311,15 @@ const resultfilmsDirector=[
   "id": "45204234-adfd-45cb-a505-a8e7a676b114",
   "title": "My Neighbors the Yamadas",
   "director": "Isao Takahata",
-  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
+  "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
 },
   {
     "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
     "title": "The Tale of the Princess Kaguya",
     "director": "Isao Takahata",
-    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
   }
-]
+];
 
 describe('relatedDirector()',()=>{
   it('is a function',()=>{
@@ -327,5 +327,51 @@ describe('relatedDirector()',()=>{
   });
   it('returns `resultFilmsDirector`',()=>{
     expect(relatedDirector(filmsDirector,"Isao Takahata")).toEqual(resultfilmsDirector);
-  })
+  });
+});
+
+const peopleforfilters=[{
+  "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
+  "name": "Pazu",
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+  "gender": "Male",
+  "age": "13",
+  "eye_color": "Black",
+  "hair_color": "Brown",
+  "specie": "Human"
+},{
+  "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
+  "name": "Lusheeta Toel Ul Laputa",
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+  "gender": "Female",
+  "age": "13",
+  "eye_color": "Black",
+  "hair_color": "Black",
+  "specie": "unknow"}];
+const peopleGender=[{
+  "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
+  "name": "Pazu",
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+  "gender": "Male",
+  "age": "13",
+  "eye_color": "Black",
+  "hair_color": "Brown",
+  "specie": "Human"
+}];
+describe('filterByGender()', () =>{
+  it('is a function',()=>{
+    expect(typeof filterByGender).toBe('function');
+  });
+  it('returns a object with gender',()=>{
+    expect(filterByGender(peopleforfilters,"Male")).toEqual(peopleGender);
+  });
+});
+
+describe('filterBySpecie()', () =>{
+  it('is a function',()=>{
+    expect(typeof filterBySpecie).toBe('function');
+  });
+  it('returns a object with specie',()=>{
+    expect(filterBySpecie(peopleforfilters,"Human")).toEqual(peopleGender);
+  });
 });

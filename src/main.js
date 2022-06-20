@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterSpecie, filterGender, relatedDirector} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector} from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -173,9 +173,8 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("flechaDerecha").style.display="none";
   document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
-  document.getElementById("barraBusqueda").style.display="flex";
-  document.getElementById("gender").style.display="none";
-  document.getElementById("specie").style.display="none";
+  document.getElementById("barraBusqueda").style.display="flex"; 
+  document.getElementById("filtersPrincipal").style.display="none";
   showInfoMovies(films,mainmovies);
   document.getElementById("botonesOrdenar").style.display="block";
 });
@@ -193,8 +192,7 @@ personajes_men.addEventListener("click",()=>{
   document.getElementById("carruselPeliculas").classList.remove("carruselPeliculas");
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
   document.getElementById("barraBusqueda").style.display="flex";
-  document.getElementById("gender").style.display="flex";
-  document.getElementById("specie").style.display="flex";
+  document.getElementById("filtersPrincipal").style.display="flex";
   mainmovies.innerHTML = "";
   showInfoPeople(newArrayPeople(films),mainmovies);
   document.getElementById("botonesOrdenar").style.display="none";
@@ -330,21 +328,6 @@ function pgDirectores(name){
   showInfoMovies(relatedDirector(films, name),maindirector);
 }
 
-
-let btnGender = document.getElementById("gender");
-btnGender.addEventListener("click",()=>{
-  mainmovies.innerHTML = "";
-  let arrayPeople = filterGender(newArrayPeople(films));
-  showInfoPeople(arrayPeople, mainmovies);
-})
-
-let btnSpecie = document.getElementById("specie");
-btnSpecie.addEventListener("click",()=>{
-  mainmovies.innerHTML = "";
-  let arrayPeople = filterSpecie(newArrayPeople(films));
-  showInfoPeople(arrayPeople, mainmovies);
-})
-
 //metodo para las vistas de personajes
 
 function infoPeople(filmsPublished){
@@ -355,3 +338,18 @@ function infoPeople(filmsPublished){
   document.getElementById("color_cabello").innerHTML=`${filmsPublished.hair_color}`;
   document.getElementById("especie").innerHTML=`${filmsPublished.specie}`;
 }
+
+//filtros de genero y especie
+const filterbyGender = document.getElementById("filterGender");
+filterbyGender.addEventListener("change", (event) => {
+  const selectedGender = filterByGender(newArrayPeople(films), event.target.value);
+  mainmovies.innerHTML = "";
+  showInfoPeople(selectedGender,mainmovies);
+});
+
+const filterbySpecie = document.getElementById("filterSpecie");
+filterbySpecie.addEventListener("change", (event) => {
+  const selectedSpecie = filterBySpecie(newArrayPeople(films), event.target.value);
+  mainmovies.innerHTML = "";
+  showInfoPeople(selectedSpecie,mainmovies);
+});

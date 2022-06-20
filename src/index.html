@@ -80,8 +80,39 @@
 
     <section id="Principal" class="back-principal">
       <div id="barraBusqueda" class="barraBusqueda">
-        <button id="gender" class="btnNavegar">GENERO</button>
-        <button id="specie" class="btnNavegar">ESPECIE</button>
+        <div class="filtersFather" id="filtersPrincipal">
+          <label for="filterGender">GENERO:  </label>
+            <select id="filterGender" class="filters">
+              <option value="empty" disabled selected>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="NA">NA</option>
+              <option value="Unknown (Possible Male)">Unknown</option>
+            </select>
+  
+          <label for="filterSpecie">ESPECIE:  </label>
+            <select id="filterSpecie" class="filters">
+              <option value="empty" disabled selected>Specie</option>
+              <option value="Bird">Bird</option>
+              <option value="Borrower">Borrower</option>
+              <option value="Cat">Cat</option>
+              <option value="Deity">Deity</option>
+              <option value="Demon">Demon</option>
+              <option value="Deity, Dragon">Dragon</option>
+              <option value="Dog">Dog</option>
+              <option value="Fish/Human">Fish/Human</option>
+              <option value="Human">Human</option>
+              <option value="Raccoon Dog">Raccoon Dog</option>
+              <option value="Red elk">Red elk</option>
+              <option value="Spirit">Spirit</option>
+              <option value="Spirit of The White Fox">Spirit of The White Fox</option>
+              <option value="Totoro">Totoro</option>
+              <option value="unknown">Unknown</option>
+              <option value="Witch">Witch</option>
+              <option value="Wizard">Wizard</option>
+              <option value="Wolf">Wolf</option>
+            </select>
+        </div>
         <div id="botonesOrdenar">
           <button id="aZ" class="btnNavegar">A - Z</button>
           <button id="zA" class="btnNavegar">Z - A</button>
