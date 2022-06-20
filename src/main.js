@@ -13,7 +13,7 @@ const films = data.films;
 const mainmovies = document.querySelector("#carruselPeliculas");
 const modal = document.getElementById("modalP");
 
-function showInfoMovies (arrayData){
+function showInfoMovies (arrayData, mainmovies){
     mainmovies.innerHTML = "";
     arrayData.forEach((filmsPublished) => {
         const divFilm = document.createElement("div"); //div para cada tarjeta
@@ -27,6 +27,7 @@ function showInfoMovies (arrayData){
       const identityMovie = document.getElementById(filmsPublished.id)
         identityMovie.addEventListener("click", ()=>{
           document.getElementById("paginaPrincipal").style.display="none";
+          document.getElementById("paginaDirectores").style.display="none";
           document.getElementById("cabecera").style.display="none";
           document.getElementById("topTres").style.display="none";
           document.getElementById("Peliculas").style.display="flex";
@@ -49,7 +50,7 @@ function showInfoMovies (arrayData){
     });
 }
 
-showInfoMovies(films);
+showInfoMovies(films,mainmovies);
 
 /* Permite el funcionamiento del carrusel  */
 const carrusel = document.querySelector("#carruselPeliculas");
@@ -65,34 +66,34 @@ flechaIzq.addEventListener("click", ()=>{
 let btnAZ = document.querySelector('#aZ');
 btnAZ.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderAZ(films));
+  showInfoMovies(orderAZ(films),mainmovies);
 });
 
 let btnZA = document.querySelector('#zA');
 btnZA.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderZA(films));
+  showInfoMovies(orderZA(films),mainmovies);
 });
 
 let btnAntigua = document.querySelector('#antigua');
 btnAntigua.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderAntigua(films));
+  showInfoMovies(orderAntigua(films),mainmovies);
 });
 
 let btnReciente = document.querySelector('#reciente');
 btnReciente.addEventListener("click",()=>{
   carrusel.scrollLeft=0;
-  showInfoMovies(orderReciente(films));
+  showInfoMovies(orderReciente(films),mainmovies);
 });
 
 let ingreso = document.querySelector('#inputBuscar');
   ingreso.addEventListener("keyup",()=>{
     carrusel.scrollLeft=0;
-    showInfoMovies(search(films));
+    showInfoMovies(search(films),mainmovies);
     showInfoPeople(searchPeople(newArrayPeople(films),films),mainmovies);
     if(document.getElementById("inputBuscar").value==""){
-        showInfoMovies(films);
+        showInfoMovies(films),mainmovies;
       }
   });
 
@@ -175,7 +176,7 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("barraBusqueda").style.display="flex";
   document.getElementById("gender").style.display="none";
   document.getElementById("specie").style.display="none";
-  showInfoMovies(films);
+  showInfoMovies(films,mainmovies);
   document.getElementById("botonesOrdenar").style.display="block";
 });
 
@@ -325,7 +326,8 @@ function pgDirectores(name){
   document.getElementById("barraBusqueda").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
-  showRelatedFilms(relatedDirector(films, name));
+  let maindirector =document.getElementById("contRelacionadasDirectores")
+  showInfoMovies(relatedDirector(films, name),maindirector);
 }
 
 
@@ -353,17 +355,3 @@ function infoPeople(filmsPublished){
   document.getElementById("color_cabello").innerHTML=`${filmsPublished.hair_color}`;
   document.getElementById("especie").innerHTML=`${filmsPublished.specie}`;
 }
-
-//metodo para peliculas relacionadas 
-
-function showRelatedFilms(relatedData){
-  let contRelated = document.getElementById("contRelacionadasDirectores");
-  mainmovies.innerHTML = "";
-  relatedData.forEach((relatedFilms) => {
-      const divFilm = document.createElement("div"); //div para cada tarjeta
-      divFilm.classList.add("div_content_movies");
-      divFilm.innerHTML=`<img src="${relatedFilms.img}" class="div_img_movie" />
-      <b><h3 class="contenedor_section_h3"><p class="films-titles">${relatedFilms.title}</h3></b>`;
-      divFilm.setAttribute("id", relatedFilms.name);
-      contRelated.appendChild(divFilm);
-})}

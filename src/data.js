@@ -133,7 +133,7 @@ export function relatedDirector(films, director){
             let arrayDirect ={"id":`${films[i].id}`,
                           "title":`${films[i].title}`,
                           "director":`${films[i].director}`,
-                          "img":`${films[i].poster}`};
+                          "poster":`${films[i].poster}`};
             newDirector.push(arrayDirect);
         }
      }
