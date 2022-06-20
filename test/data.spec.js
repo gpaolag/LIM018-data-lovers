@@ -1,5 +1,5 @@
 import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
-import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector} from '../src/data.js';
+import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector, relatedDirector} from '../src/data.js';
 
 const pruebas=[
   {
@@ -272,5 +272,60 @@ describe('searchDirectores()',()=>{
   });
   it('returns `resultdirec`',()=>{
     expect(SearchDirector(directores,"Hayao Miyazaki")).toEqual(resultdirec);
+  })
+});
+
+const filmsDirector=[
+  {
+    "id": "45204234-adfd-45cb-a505-a8e7a676b114",
+    "title": "My Neighbors the Yamadas",
+    "description": "The Yamadas are a typical middle class Japanese family in urban Tokyo and this film shows us a variety of episodes of their lives. With tales that range from the humourous to the heartbreaking, we see this family cope with life's little conflicts, problems and joys in their own way.",
+    "director": "Isao Takahata",
+    "producer": "Toshio Suzuki",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
+    "release_date": "1999",
+    "rt_score": "75"},
+    {
+      "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
+      "title": "The Tale of the Princess Kaguya",
+      "description": "A bamboo cutter named Sanuki no Miyatsuko discovers a miniature girl inside a glowing bamboo shoot. Believing her to be a divine presence, he and his wife decide to raise her as their own, calling her 'Princess'.",
+      "director": "Isao Takahata",
+      "producer": "Yoshiaki Nishimura",
+      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
+      "release_date": "2013",
+      "rt_score": "100"},
+    {
+    "id": "90b72513-afd4-4570-84de-a56c312fdf81",
+    "title": "The Cat Returns",
+    "description": "Haru, a schoolgirl bored by her ordinary routine, saves the life of an unusual cat and suddenly her world is transformed beyond anything she ever imagined. The Cat King rewards her good deed with a flurry of presents, including a very shocking proposal of marriage to his son! Haru embarks on an unexpected journey to the Kingdom of Cats where her eyes are opened to a whole other world.",
+    "director": "Hiroyuki Morita",
+    "producer": "Toshio Suzuki",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Cat_Returns.jpg",
+    "release_date": "2002",
+    "rt_score": "89"
+  }
+];
+  
+const resultfilmsDirector=[
+  {
+  "id": "45204234-adfd-45cb-a505-a8e7a676b114",
+  "title": "My Neighbors the Yamadas",
+  "director": "Isao Takahata",
+  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
+},
+  {
+    "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
+    "title": "The Tale of the Princess Kaguya",
+    "director": "Isao Takahata",
+    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
+  }
+]
+
+describe('relatedDirector()',()=>{
+  it('is a function',()=>{
+    expect(typeof relatedDirector).toBe('function');
+  });
+  it('returns `resultFilmsDirector`',()=>{
+    expect(relatedDirector(filmsDirector,"Isao Takahata")).toEqual(resultfilmsDirector);
   })
 });
