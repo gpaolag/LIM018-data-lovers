@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterSpecie, filterGender} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterSpecie, filterGender, relatedDirector} from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -274,8 +274,15 @@ function showDirector(dataDirector){
     dataDirector.forEach((allDirectors) =>{
         const divDirector = document.createElement("div");
         divDirector.classList.add("contenedorGlobalDirectores");
-        divDirector.innerHTML=`<div  id="nombreDirectores__paginaDirectores" class="titulos">${allDirectors.name}</div><img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
-        <b><h3 id="descriptionDirector" class="descriptionDirector">${allDirectors.description}</h3></b><div id="contRelacionado__PgDirectores" class="contRelacionado__PgDirectores"><div class="relacionadasDirectores titulos" id="relacionadasDirectores">PELICULAS DIRIGIDAS</div><div id="contRelacionadasDirectores" class="contRelacionadasDirectores"></div></div>`;
+        divDirector.innerHTML=`<div  id="nombreDirectores__paginaDirectores" class="titulos">${allDirectors.name}</div>
+        <div id="contDirector">
+            <img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
+            <b><h3 id="descriptionDirector" class="descriptionDirector">${allDirectors.description}</h3></b>
+        </div>
+        <div id="contRelacionado__PgDirectores" class="contRelacionado__PgDirectores">
+            <div class="relacionadasDirectores titulos" id="relacionadasDirectores">PELICULAS DIRIGIDAS</div>
+            <div id="contRelacionadasDirectores" class="contRelacionadasDirectores"></div>
+        </div>`;
         divDirector.setAttribute("id", allDirectors.id);
         mainDirectores.appendChild(divDirector);
     });
@@ -318,6 +325,10 @@ function pgDirectores(name){
   document.getElementById("barraBusqueda").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
+  let arregloRelatedFilms = relatedDirector(films, name);
+  showRelatedFilms(relatedDirector(films, name));
+  // eslint-disable-next-line no-console
+  console.log(arregloRelatedFilms);
 }
 
 
@@ -345,3 +356,17 @@ function infoPeople(filmsPublished){
   document.getElementById("color_cabello").innerHTML=`${filmsPublished.hair_color}`;
   document.getElementById("especie").innerHTML=`${filmsPublished.specie}`;
 }
+
+//metodo para peliculas relacionadas 
+
+function showRelatedFilms(relatedData){
+  let contRelated = document.getElementById("contRelacionadasDirectores");
+  mainmovies.innerHTML = "";
+  relatedData.forEach((relatedFilms) => {
+      const divFilm = document.createElement("div"); //div para cada tarjeta
+      divFilm.classList.add("div_content_movies");
+      divFilm.innerHTML=`<img src="${relatedFilms.img}" class="div_img_movie" />
+      <b><h3 class="contenedor_section_h3"><p class="films-titles">${relatedFilms.title}</h3></b>`;
+      divFilm.setAttribute("id", relatedFilms.name);
+      contRelated.appendChild(divFilm);
+})}

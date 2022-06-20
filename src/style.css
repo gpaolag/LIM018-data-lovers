@@ -150,11 +150,14 @@ scroll-behavior: smooth;
 .div_content_movies {
 padding-left:10px;
 padding-right:10px;
-margin: 10px;
+margin: auto;
 }
 /* Al pasar el ratón por la peli, aumenta su tamaño */
 .div_content_movies:hover{
 transform: scale(1.10);
+}
+.relacionadasDirectores{
+  margin: auto;
 }
 .img_movie {
 min-width:120px;
@@ -379,44 +382,44 @@ color: #ffffff;
 
 /* Desde acá comienza el estilo para página de directores */
 #paginaDirectores {
-  margin-top: 10px;
+  margin: auto;
+  margin-top: 30px;
   display:none;
-  width: 95vw;
   justify-content: center;
-  flex-wrap: wrap;
+  align-content: center;
+  flex-wrap: nowrap;
+  width: 90%;
 }
-.contenedorGlobalDirectores{
-  border-radius: 50px;
-  display: flex;
-  width: 100vw;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-}
+
 #nombreDirectores__paginaDirectores{
-  position: absolute;
-  margin: 30px;
-  height: 40px;
-  text-align: center;
-  border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 120px;
+margin: auto;
+margin-top: 20px;
+
 }
-.contRelacionado__PgDirectores{
+#contDirector{
   display: flex;
-  position: absolute;
-  margin-top: 40%;
-  width: auto;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
 }
 #relacioandasDirectores{
   margin-bottom: 30px;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 20px;
+  position: inherit;
 }
 .contRelacionadasDirectores{
-  background-color: yellow;
-  height: 200px;
+  margin: auto;
+  display: flex;
+  background-color: rgba(1, 2, 27, 0.5);
+  height: 100%;
+  padding-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  flex-wrap: wrap;
+  border-radius: 20px;
 }
 .descriptionDirector{
   padding: 30px;
@@ -425,23 +428,15 @@ color: #ffffff;
   font-size: 18px;
   display: flex;
   background-color: rgb(255, 255, 255, 0.5);
-  width: 80%;
-  height: 40%;
-  margin-bottom: 0%;
+  width: 95%;
   text-align: center;
 }
 
 .imgDirector{
-  margin: 80px;
   cursor:auto;
+  margin: 30px;
 }
 
-.contRelacionado__PgDirectores{
-  display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-}
 @media (max-width: 768px){
  /*Estilo para el header de todas las páginas en dispositivos móviles*/
   body{
