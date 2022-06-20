@@ -1,5 +1,5 @@
 import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
-import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie} from '../src/data.js';
+import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector} from '../src/data.js';
 
 const pruebas=[
   {
@@ -88,16 +88,6 @@ describe('orderAZ()', () => {
   });
 });
 
-describe('orderZA()', () => {
-  it('is a function', () => {
-    expect(typeof orderZA).toBe('function');
-  });
-
-  it('returns `ordZA`', () => {
-    expect(orderZA(pruebas)).toEqual(ordZA);
-  });
-});
-
 describe('orderReciente()', () => {
   it('is a function', () => {
     expect(typeof orderReciente).toBe('function');
@@ -105,6 +95,16 @@ describe('orderReciente()', () => {
 
   it('returns `ordRec`', () => {
     expect(orderReciente(pruebas)).toEqual(ordRec);
+  });
+});
+
+describe('orderZA()', () => {
+  it('is a function', () => {
+    expect(typeof orderZA).toBe('function');
+  });
+
+  it('returns `ordZA`', () => {
+    expect(orderZA(pruebas)).toEqual(ordZA);
   });
 });
 
@@ -125,12 +125,23 @@ const pruebaPeople=[
     "people": [
       {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
-        "name": "Pazu",
-        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"},
-      {
-        "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
-        "name": "Lusheeta Toel Ul Laputa",
-        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg"}
+          "name": "Pazu",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+          "gender": "Male",
+          "age": "13",
+          "eye_color": "Black",
+          "hair_color": "Brown",
+          "specie": "Human"
+        },
+        {
+          "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
+          "name": "Lusheeta Toel Ul Laputa",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+          "gender": "Female",
+          "age": "13",
+          "eye_color": "Black",
+          "hair_color": "Black",
+          "specie": "Human"}
       ]},
   {
     "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe2",
@@ -138,38 +149,72 @@ const pruebaPeople=[
     "people": [
       {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
-        "name": "Pazu",
-        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"},
-      {
-        "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
-        "name": "Lusheeta Toel Ul Laputa",
-        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg"}
+          "name": "Pazu",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+          "gender": "Male",
+          "age": "13",
+          "eye_color": "Black",
+          "hair_color": "Brown",
+          "specie": "Human"
+        },
+        {
+          "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
+          "name": "Lusheeta Toel Ul Laputa",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+          "gender": "Female",
+          "age": "13",
+          "eye_color": "Black",
+          "hair_color": "Black",
+          "specie": "Human"}
       ]}];
 
 const resultPeople=[
   {
-  "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
-  "name": "Pazu",
-  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"},
-{
-  "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
-  "name": "Lusheeta Toel Ul Laputa",
-  "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg"},
-  {
     "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
     "name": "Pazu",
-    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"},
+    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+    "gender": "Male",
+    "age": "13",
+    "eye_color": "Black",
+    "hair_color": "Brown",
+    "specie": "Human"
+  },
   {
     "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
     "name": "Lusheeta Toel Ul Laputa",
-    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg"}];
+    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+    "gender": "Female",
+    "age": "13",
+    "eye_color": "Black",
+    "hair_color": "Black",
+    "specie": "Human"},
+  {
+      "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
+      "name": "Pazu",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg",
+      "gender": "Male",
+      "age": "13",
+      "eye_color": "Black",
+      "hair_color": "Brown",
+      "specie": "Human"
+    },
+  {
+      "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
+      "name": "Lusheeta Toel Ul Laputa",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg",
+      "gender": "Female",
+      "age": "13",
+      "eye_color": "Black",
+      "hair_color": "Black",
+      "specie": "Human"}
+  ];
 
 describe('newArrayPeople()', () => {
   it('is a function', () => {
     expect(typeof newArrayPeople).toBe('function');
   });
 
-  it('returns `ordAnt`', () => {
+  it('returns `resultPeople`', () => {
     expect(newArrayPeople(pruebaPeople)).toEqual(resultPeople);
   });
 });
@@ -191,3 +236,33 @@ describe('peopleforMovie()', () => {
   it('returns `resultPeopleFilms`', () => {
     expect(peopleforMovie(pruebaPeople,"2baf70d1-42bb-4437-b551-e5fed5a87abe")).toEqual(resultPeopleFilms2);
 })});
+
+const directores =[
+  {
+    "id":"dir1",
+    "name": "Hayao Miyazaki",
+    "description": "Es uno de los fundadores de Studio Ghibli, junto con Isao Takahada. Dentro de sus ocupaciones encontramos director de cine de animación, animador, ilustrador, mangaka y productor de anime japonés de renombre. <br> Dentro de sus filmes de animación más populares podemos encontrar El viaje de Chihiro, Mi Vecino Totoro,  La princesa Mononoke y otros más.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg"
+  },
+  {
+    "id":"dir2",
+    "name": "Isao Takahata",
+    "description": "Fue un director, escritor, productor y guionista japones. Fue, junto a Hayao Miyazaki fundador de Studio Ghibli. El cuento de la princesa Kaguya (2013), fue su última película, y la misma estuvo nominada en la categoría de mejor película de animación en los 87.º Premios Óscar.",
+    "img": "http://pm1.narvii.com/6365/aad8c69e3a811ccabf0439a2a2a0fae70ebaebac_00.jpg"
+  }];
+const resultdirec=[{
+  "id":"dir1",
+  "name": "Hayao Miyazaki",
+  "description": "Es uno de los fundadores de Studio Ghibli, junto con Isao Takahada. Dentro de sus ocupaciones encontramos director de cine de animación, animador, ilustrador, mangaka y productor de anime japonés de renombre. <br> Dentro de sus filmes de animación más populares podemos encontrar El viaje de Chihiro, Mi Vecino Totoro,  La princesa Mononoke y otros más.",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg"
+}
+]
+
+describe('searchDirectores()',()=>{
+  it('is a function',()=>{
+    expect(typeof SearchDirector).toBe('function');
+  });
+  it('returns `resultdirec`',()=>{
+    expect(SearchDirector(directores,"Hayao Miyazaki")).toEqual(resultdirec);
+  })
+});

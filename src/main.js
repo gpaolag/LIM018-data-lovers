@@ -11,6 +11,7 @@ let navMenu = document.querySelector(".nav-menu");
     
 const films = data.films;
 const mainmovies = document.querySelector("#carruselPeliculas");
+const modal = document.getElementById("modalP");
 
 function showInfoMovies (arrayData){
     mainmovies.innerHTML = "";
@@ -95,16 +96,31 @@ let ingreso = document.querySelector('#inputBuscar');
       }
   });
 
-
+//metodo para mostrar cualquier personaje
 function showInfoPeople (arrayData,mainmovies){
-    arrayData.forEach((filmsPublished) => {
-        const divFilm = document.createElement("div"); //div para cada tarjeta de personaje
-        divFilm.classList.add("div_content_movies");
-        divFilm.innerHTML=`<img src="${filmsPublished.img}" class="div_img_movie" />
-        <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.name}</h3></b>`;
-        divFilm.setAttribute("id", filmsPublished.id);
-        mainmovies.appendChild(divFilm);
+  arrayData.forEach((filmsPublished) => {
+      const divFilm = document.createElement("div"); //div para cada tarjeta de personaje
+      divFilm.classList.add("div_content_movies");
+      divFilm.innerHTML=`<img src="${filmsPublished.img}" class="div_img_movie" />
+      <b><h3 class="contenedor_section_h3"><p class="films-titles">${filmsPublished.name}</h3></b>`;
+      divFilm.setAttribute("id", filmsPublished.id);
+      mainmovies.appendChild(divFilm);
+
+    const peopleclick=document.getElementById(filmsPublished.id);
+    const span = document.getElementsByClassName("close")[0];
+    span.addEventListener("click",()=>{
+      modal.style.display = "none";
+    })
+    peopleclick.addEventListener("click" , ()=>{
+      infoPeople(filmsPublished);
+      modal.style.display="block";        
     });
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  });
 }
 
 //arreglo de peliculas destacadas
@@ -318,3 +334,14 @@ btnSpecie.addEventListener("click",()=>{
   let arrayPeople = filterSpecie(newArrayPeople(films));
   showInfoPeople(arrayPeople, mainmovies);
 })
+
+//metodo para las vistas de personajes
+
+function infoPeople(filmsPublished){
+  document.getElementById("nombre").innerHTML=`${filmsPublished.name}`;
+  document.getElementById("genero").innerHTML=`${filmsPublished.gender}`;
+  document.getElementById("edad").innerHTML=`${filmsPublished.age}`;
+  document.getElementById("color_ojos").innerHTML=`${filmsPublished.eye_color}`;
+  document.getElementById("color_cabello").innerHTML=`${filmsPublished.hair_color}`;
+  document.getElementById("especie").innerHTML=`${filmsPublished.specie}`;
+}

@@ -471,6 +471,12 @@ color: #ffffff;
   /*---------------Desde acá estoy agregando el estilo para el carrusel -------------------- */
   #contenedorCarrusel {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
   }
   #contenedorCarrusel .carruselPeliculas{
     display: grid;
@@ -603,7 +609,7 @@ margin: 10px;
 font-family: 'Mali', cursive;
 font-style: normal;
 font-weight: 700;
-font-size: 14px;
+font-size: 17px;
 line-height: 1.2;
 text-align: center;
 color: #565252;
@@ -638,4 +644,83 @@ align-content: flex-start;
 flex-direction: row;
 display: flex;
 justify-content: space-around;
+}
+
+/*css de la vista de ventanas de personajes*/
+.modalPeople{
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.contenidoP{
+    display: flex;
+    position: relative;
+    background: #D8D3CE;
+    margin: auto;
+    padding: 0;
+    border-radius: 10px;
+    border: 5px double #454545;
+    width:280px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+.titulomodal{
+  padding:5px;
+  margin:5px 20px;
+  text-align: center;
+  border-radius:15px;
+  font-family: 'Mali', cursive;
+  justify-content: center;
+  color: #fcfcfc;
+  font-weight: 600;
+  font-size:18px;
+  background:#27387c;
+}
+.textosmodal{
+  padding:5px;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  justify-content: center;
+  color: #312f2f;
+  font-size:16px;
+}
+.close {
+  color: #0f2f61;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+    padding-right: 10px;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -51,10 +51,13 @@ export function newArrayPeople(films){
     for(let i=0; i<films.length; i++){
         for(let j=0;j<films[i].people.length;j++){
             let variable = {"id": `${films[i].people[j].id}`,
-                            "gender": `${films[i].people[j].gender}`,
-                            "specie": `${films[i].people[j].specie}`,
                             "name": `${films[i].people[j].name}`,
-                            "img": `${films[i].people[j].img}`};
+                            "img": `${films[i].people[j].img}`,
+                            "age": `${films[i].people[j].age}`,
+                            "gender": `${films[i].people[j].gender}`,
+                            "hair_color": `${films[i].people[j].hair_color}`,
+                            "specie": `${films[i].people[j].specie}`,
+                            "eye_color": `${films[i].people[j].eye_color}`};
             peoplelist.push(variable);
         }}
     return peoplelist;
@@ -117,7 +120,6 @@ export function filterGender(peoplelist){
     orderGender = newOrder;
     return orderGender;
 }
-
 
 export function relatedDirector(films, director){
     let newDirector=[];
