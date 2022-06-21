@@ -111,11 +111,8 @@ export function filterByGender(people,valueFilter){
 export function relatedDirector(films, director){
     let newDirector=[];
     for(let i=0;i<films.length; i++){
-        if(films[i].director == director){
-            let arrayDirect ={"id":`${films[i].id}`,
-                          "title":`${films[i].title}`,
-                          "director":`${films[i].director}`,
-                          "poster":`${films[i].poster}`};
+        if(films[i].director === director){
+            let arrayDirect =films[i];
             newDirector.push(arrayDirect);
         }
      }
