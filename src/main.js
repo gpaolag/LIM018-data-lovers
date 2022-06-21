@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations} from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -175,6 +175,7 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
   document.getElementById("barraBusqueda").style.display="flex"; 
   document.getElementById("filtersPrincipal").style.display="none";
+  document.getElementById("paginaLocaciones").style.display="none";
   showInfoMovies(films,mainmovies);
   document.getElementById("botonesOrdenar").style.display="block";
 });
@@ -193,6 +194,7 @@ personajes_men.addEventListener("click",()=>{
   document.getElementById("carruselPeliculas").classList.add("carruselPeliculas__pgPeliculas");
   document.getElementById("barraBusqueda").style.display="flex";
   document.getElementById("filtersPrincipal").style.display="flex";
+  document.getElementById("paginaLocaciones").style.display="none";
   mainmovies.innerHTML = "";
   showInfoPeople(newArrayPeople(films),mainmovies);
   document.getElementById("botonesOrdenar").style.display="none";
@@ -269,6 +271,7 @@ const directores =[
 const mainDirectores = document.getElementById("paginaDirectores");
 
 function showDirector(dataDirector){
+    mainmovies.innerHTML="";
     mainDirectores.innerHTML ="";
     dataDirector.forEach((allDirectors) =>{
         const divDirector = document.createElement("div");
@@ -320,6 +323,7 @@ function pgDirectores(name){
   document.getElementById("topTres").style.display="none";
   document.getElementById("botonesOrdenar").style.display="none";
   document.getElementById("barraBusqueda").style.display="none";
+  document.getElementById("paginaLocaciones").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
   let maindirector =document.getElementById("contRelacionadasDirectores")
@@ -350,4 +354,37 @@ filterbySpecie.addEventListener("change", (event) => {
   const selectedSpecie = filterBySpecie(newArrayPeople(films), event.target.value);
   mainmovies.innerHTML = "";
   showInfoPeople(selectedSpecie,mainmovies);
+});
+
+//vista de locaciones
+const mainlocaciones=document.getElementById("paginaLocaciones");
+function viewLocaciones(films){
+  mainlocaciones.innerHTML="";
+  films.forEach((filmsPub) => {
+    const divFilm = document.createElement("div");
+    divFilm.classList.add("div_content_locations");
+    divFilm.innerHTML=`<img src="${filmsPub.img}" class="div_img_location" />
+      <b><h3 class="location-titles"><p>${filmsPub.name}</h3></b>
+      <b><h3 class="location-titles"><p >CLIMATE: ${filmsPub.climate}</h3></b>
+      <b><h3 class="location-titles"><p >TERRAIN: ${filmsPub.terrain}</h3></b>
+      <b><h3 class="location-titles"><p >SURFACE WATER: ${filmsPub.surface_water}</h3></b>`;
+    mainlocaciones.appendChild(divFilm);
+  });
+  
+}
+
+const locacion=document.getElementById("locaciones");
+locacion.addEventListener("click",()=>{
+  document.getElementById("paginaPrincipal").style.display="none";
+  document.getElementById("paginaLocaciones").style.display="flex";
+  document.getElementById("Peliculas").style.display="none";
+  document.getElementById("cabecera").style.display="none";
+  document.getElementById("topTres").style.display="none";
+  document.getElementById("flechaIzquierda").style.display="none";
+  document.getElementById("flechaDerecha").style.display="none";
+  document.getElementById("paginaDirectores").style.display="none";
+  document.getElementById("contenedorCarrusel").style.width="100%";
+  document.getElementById("barraBusqueda").style.display="none";
+  viewLocaciones(locations(films,mainlocaciones));
+  document.getElementById("botonesOrdenar").style.display="none";
 });

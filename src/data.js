@@ -101,12 +101,12 @@ export function SearchDirector(directores, name){
 export function filterBySpecie(people,valueFilter){
     const peopleSpecie=people.filter(x => x.specie === valueFilter);
     return peopleSpecie;
-  }
+}
   
 export function filterByGender(people,valueFilter){
     const peopleGender = people.filter(y => y.gender === valueFilter);
     return peopleGender;
-  }
+}
 
 export function relatedDirector(films, director){
     let newDirector=[];
@@ -121,3 +121,9 @@ export function relatedDirector(films, director){
      }
      return newDirector;
 }
+
+export function locations(films) {
+    const locations = films.map((x) => x.locations);
+    const totalLocations = locations.reduce((x, y) => x.concat(y), []);
+    return totalLocations;
+  }
