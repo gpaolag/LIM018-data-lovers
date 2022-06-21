@@ -276,25 +276,280 @@ describe('searchDirectores()',()=>{
 });
 
 const filmsDirector=[
+{
+  "id": "90b72513-afd4-4570-84de-a56c312fdf81",
+  "title": "The Cat Returns",
+  "description": "Haru, a schoolgirl bored by her ordinary routine, saves the life of an unusual cat and suddenly her world is transformed beyond anything she ever imagined. The Cat King rewards her good deed with a flurry of presents, including a very shocking proposal of marriage to his son! Haru embarks on an unexpected journey to the Kingdom of Cats where her eyes are opened to a whole other world.",
+  "director": "Hiroyuki Morita",
+  "producer": "Toshio Suzuki",
+  "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Cat_Returns.jpg",
+  "release_date": "2002",
+  "rt_score": "89",
+  "people": [
+    {
+      "id": "6b3facea-ea33-47b1-96ce-3fc737b119b8",
+      "name": "Renaldo Moon aka Moon aka Muta",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e7/Muta.png",
+      "gender": "Male",
+      "age": "NA",
+      "eye_color": "White",
+      "hair_color": "Beige",
+      "specie": "Cat"
+    },
+    {
+      "id": "3042818d-a8bb-4cba-8180-c19249822d57",
+      "name": "Cat King",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/34/The_Cat_King.jpg",
+      "gender": "Male",
+      "age": "87",
+      "eye_color": "Emerald",
+      "hair_color": "Grey",
+      "specie": "Cat"
+    },
+    {
+      "id": "58d1973f-f247-47d7-9358-e56cb0d2b5a6",
+      "name": "Yuki",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/eb/New_queen%2C_Yuki.JPG",
+      "gender": "Female",
+      "age": "NA",
+      "eye_color": "Blue",
+      "hair_color": "White",
+      "specie": "Cat"
+    },
+    {
+      "id": "a3d8e70f-46a0-4e5a-b850-db01620d6b92",
+      "name": "Haru Yoshioka",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/27/Haru_Yoshioka.jpg",
+      "gender": "Female",
+      "age": "17",
+      "eye_color": "Brown",
+      "hair_color": "Brown",
+      "specie": "Human"
+    },
+    {
+      "id": "466bc926-2024-4653-ac63-fe52f2dc8c7b",
+      "name": "Natori",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c4/Natori.jpg",
+      "gender": "Male",
+      "age": "NA",
+      "eye_color": "Blue",
+      "hair_color": "Grey",
+      "specie": "Cat"
+    },
+    {
+      "id": "269dcd81-8037-45bb-892b-1c86c9696222",
+      "name": "Toto",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8d/Toto.png",
+      "gender": "Male",
+      "age": "NA",
+      "eye_color": "Black",
+      "hair_color": "Dark Blue",
+      "specie": "Bird"
+    },
+    {
+      "id": "5b2a28f6-91d4-4382-aedc-b27094e763b0",
+      "name": "Prince Lune",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/9/90/Prince_Lune.jpg",
+      "gender": "Male",
+      "age": "Adult",
+      "eye_color": "Dark brown",
+      "hair_color": "Russian blue",
+      "specie": "Cat"
+    },
+    {
+      "id": "17aca709-3049-48fc-95a6-e802c01125a2",
+      "name": "Hiromi",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Hiromi.png",
+      "gender": "Female",
+      "age": "17",
+      "eye_color": "Brown",
+      "hair_color": "Light brown",
+      "specie": "Human"
+    },
+    {
+      "id": "911d38e2-ada4-4481-89a2-ba414422d4e4",
+      "name": "Naoko Yoshioka",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/64/Naoko_Yoshioka.jpg",
+      "gender": "Female",
+      "age": "Adult",
+      "eye_color": "Light Brown",
+      "hair_color": "Light brown",
+      "specie": "Human"
+    }
+  ],
+  "locations": [
+    {
+      "id": "a8bd9c03-7c80-4a97-b7c0-6a668acaf576",
+      "name": "The Cat Kingdom",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a9/Baron022.jpg",
+      "climate": "Continental",
+      "terrain": "Plain",
+      "surface_water": "30",
+      "residents": [
+        {
+          "id": "6b3facea-ea33-47b1-96ce-3fc737b119b8",
+          "name": "Renaldo Moon aka Moon aka Muta"
+        },
+        {
+          "id": "3042818d-a8bb-4cba-8180-c19249822d57",
+          "name": "Cat King"
+        },
+        {
+          "id": "58d1973f-f247-47d7-9358-e56cb0d2b5a6",
+          "name": "Yuki"
+        },
+        {
+          "id": "a3d8e70f-46a0-4e5a-b850-db01620d6b92",
+          "name": "Haru"
+        }
+      ]
+    }
+  ],
+  "vehicles": []
+},
+{
+  "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
+  "title": "Howl's Moving Castle",
+  "description": "When Sophie, a shy young woman, is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking home.",
+  "director": "Hayao Miyazaki",
+  "producer": "Toshio Suzuki",
+  "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg",
+  "release_date": "2004",
+  "rt_score": "87",
+  "people": [
+    {
+      "id": "fa9b410f-cad4-457d-ac71-86b0afa6cf0a",
+      "name": "Howl Jenkins Pendragon",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/f/fe/Howl_Jenkins_Pendragon.jpg",
+      "gender": "Male",
+      "age": "27",
+      "eye_color": "Bright blue",
+      "hair_color": "Bright blue",
+      "specie": "Wizard"
+    },
+    {
+      "id": "cbbe548f-dfb4-4d53-81d3-06c203dbb2ff",
+      "name": "Sophie Hatter",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/f/f4/Sophie_short_hair.jpg",
+      "gender": "Female",
+      "age": "18",
+      "eye_color": "Brown",
+      "hair_color": "White",
+      "specie": "Human"
+    },
+    {
+      "id": "1287b275-6c32-4113-947f-519316d4a6be",
+      "name": "Witch of the Waste",
+      "img": "https://i.pinimg.com/736x/ad/d0/21/add0215f72901bb0981417f73ca568e8--plus-size-cosplay-wicked-witch.jpg",
+      "gender": "Female",
+      "age": "59",
+      "eye_color": "Brown",
+      "hair_color": "White",
+      "specie": "Witch/Human"
+    },
+    {
+      "id": "b73f58ab-454a-42d6-9812-63e8f235a388",
+      "name": "Calcifer",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/2a/Calcifer.png",
+      "gender": "Male",
+      "age": "NA",
+      "eye_color": "Dark Brown",
+      "hair_color": "Orange-yellow",
+      "specie": "Demon"
+    },
+    {
+      "id": "d03ca1e2-16ab-45d1-9b81-c2b0f7b35de1",
+      "name": "Markl",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/5/5d/Markl.jpg",
+      "gender": "Male",
+      "age": "10",
+      "eye_color": "Dark Brown",
+      "hair_color": "Brown",
+      "specie": "Human"
+    },
+    {
+      "id": "45237428-93bf-4dd6-97ce-f10647300429",
+      "name": "Prince Justin or Turnip Head",
+      "img": "https://i.pinimg.com/736x/b7/49/e7/b749e7f75bda8804009de0b00e82a1b9.jpg",
+      "gender": "Male",
+      "age": "20-30",
+      "eye_color": "Grey",
+      "hair_color": "Blonde",
+      "specie": "Human/Scarecrow"
+    },
+    {
+      "id": "8f66024e-c84f-445a-9ab5-0b31a6ae354d",
+      "name": "Madame Suliman",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/64/Madame_Suliman.png",
+      "gender": "Female",
+      "age": "50",
+      "eye_color": "Grey",
+      "hair_color": "White",
+      "specie": "Human"
+    },
+    {
+      "id": "ccc705e4-aa2a-4929-b0dc-4b8a09fd290d",
+      "name": "Heen",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a7/Heen.png",
+      "gender": "Male",
+      "age": "NA",
+      "eye_color": "Brown",
+      "hair_color": "Beige-white",
+      "specie": "Dog"
+    },
+    {
+      "id": "3148150f-6ccb-4383-8af5-0c40f03c825e",
+      "name": "Lettie Hatter",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/1c/Lettie_Hatter.png",
+      "gender": "Female",
+      "age": "16",
+      "eye_color": "Blue",
+      "hair_color": "Blonde",
+      "specie": "Human"
+    },
+    {
+      "id": "06610030-0560-47ac-bc18-be80d85c4dad",
+      "name": "Fanny Hatter/Honey",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c6/Honey.png",
+      "gender": "Female",
+      "age": "Adult",
+      "eye_color": "Grey",
+      "hair_color": "Blonde",
+      "specie": "Human"
+    }
+  ],
+  "locations": [
+    {
+      "id": "b6bac992-a858-4d57-8477-9652d73caaa1",
+      "name": "Ingary",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/4/48/Ingary.png",
+      "climate": "Mild",
+      "terrain": "Hill",
+      "surface_water": "30",
+      "residents": [
+        "TODO"
+      ]
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "2354305f-dccd-4c44-a79e-cc60ba7376e6",
+      "name": "Howl's castle",
+      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e6/Howls_Castle.jpg",
+      "description": "Wizard Howl's home. It's scale changes from scene to scene.",
+      "vehicle_class": "Moving castle",
+      "length": "unknown",
+      "pilot": {
+        "id": "fa9b410f-cad4-457d-ac71-86b0afa6cf0a",
+        "name": "Howl Jenkins Pendragon"
+      }
+    }
+  ]
+}
+];
+  
+const resultfilmsDirector=[
   {
-    "id": "45204234-adfd-45cb-a505-a8e7a676b114",
-    "title": "My Neighbors the Yamadas",
-    "description": "The Yamadas are a typical middle class Japanese family in urban Tokyo and this film shows us a variety of episodes of their lives. With tales that range from the humourous to the heartbreaking, we see this family cope with life's little conflicts, problems and joys in their own way.",
-    "director": "Isao Takahata",
-    "producer": "Toshio Suzuki",
-    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
-    "release_date": "1999",
-    "rt_score": "75"},
-    {
-      "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
-      "title": "The Tale of the Princess Kaguya",
-      "description": "A bamboo cutter named Sanuki no Miyatsuko discovers a miniature girl inside a glowing bamboo shoot. Believing her to be a divine presence, he and his wife decide to raise her as their own, calling her 'Princess'.",
-      "director": "Isao Takahata",
-      "producer": "Yoshiaki Nishimura",
-      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
-      "release_date": "2013",
-      "rt_score": "100"},
-    {
     "id": "90b72513-afd4-4570-84de-a56c312fdf81",
     "title": "The Cat Returns",
     "description": "Haru, a schoolgirl bored by her ordinary routine, saves the life of an unusual cat and suddenly her world is transformed beyond anything she ever imagined. The Cat King rewards her good deed with a flurry of presents, including a very shocking proposal of marriage to his son! Haru embarks on an unexpected journey to the Kingdom of Cats where her eyes are opened to a whole other world.",
@@ -302,22 +557,128 @@ const filmsDirector=[
     "producer": "Toshio Suzuki",
     "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Cat_Returns.jpg",
     "release_date": "2002",
-    "rt_score": "89"
-  }
-];
-  
-const resultfilmsDirector=[
-  {
-  "id": "45204234-adfd-45cb-a505-a8e7a676b114",
-  "title": "My Neighbors the Yamadas",
-  "director": "Isao Takahata",
-  "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg",
-},
-  {
-    "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
-    "title": "The Tale of the Princess Kaguya",
-    "director": "Isao Takahata",
-    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg",
+    "rt_score": "89",
+    "people": [
+      {
+        "id": "6b3facea-ea33-47b1-96ce-3fc737b119b8",
+        "name": "Renaldo Moon aka Moon aka Muta",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e7/Muta.png",
+        "gender": "Male",
+        "age": "NA",
+        "eye_color": "White",
+        "hair_color": "Beige",
+        "specie": "Cat"
+      },
+      {
+        "id": "3042818d-a8bb-4cba-8180-c19249822d57",
+        "name": "Cat King",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/34/The_Cat_King.jpg",
+        "gender": "Male",
+        "age": "87",
+        "eye_color": "Emerald",
+        "hair_color": "Grey",
+        "specie": "Cat"
+      },
+      {
+        "id": "58d1973f-f247-47d7-9358-e56cb0d2b5a6",
+        "name": "Yuki",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/eb/New_queen%2C_Yuki.JPG",
+        "gender": "Female",
+        "age": "NA",
+        "eye_color": "Blue",
+        "hair_color": "White",
+        "specie": "Cat"
+      },
+      {
+        "id": "a3d8e70f-46a0-4e5a-b850-db01620d6b92",
+        "name": "Haru Yoshioka",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/27/Haru_Yoshioka.jpg",
+        "gender": "Female",
+        "age": "17",
+        "eye_color": "Brown",
+        "hair_color": "Brown",
+        "specie": "Human"
+      },
+      {
+        "id": "466bc926-2024-4653-ac63-fe52f2dc8c7b",
+        "name": "Natori",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c4/Natori.jpg",
+        "gender": "Male",
+        "age": "NA",
+        "eye_color": "Blue",
+        "hair_color": "Grey",
+        "specie": "Cat"
+      },
+      {
+        "id": "269dcd81-8037-45bb-892b-1c86c9696222",
+        "name": "Toto",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8d/Toto.png",
+        "gender": "Male",
+        "age": "NA",
+        "eye_color": "Black",
+        "hair_color": "Dark Blue",
+        "specie": "Bird"
+      },
+      {
+        "id": "5b2a28f6-91d4-4382-aedc-b27094e763b0",
+        "name": "Prince Lune",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/9/90/Prince_Lune.jpg",
+        "gender": "Male",
+        "age": "Adult",
+        "eye_color": "Dark brown",
+        "hair_color": "Russian blue",
+        "specie": "Cat"
+      },
+      {
+        "id": "17aca709-3049-48fc-95a6-e802c01125a2",
+        "name": "Hiromi",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Hiromi.png",
+        "gender": "Female",
+        "age": "17",
+        "eye_color": "Brown",
+        "hair_color": "Light brown",
+        "specie": "Human"
+      },
+      {
+        "id": "911d38e2-ada4-4481-89a2-ba414422d4e4",
+        "name": "Naoko Yoshioka",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/64/Naoko_Yoshioka.jpg",
+        "gender": "Female",
+        "age": "Adult",
+        "eye_color": "Light Brown",
+        "hair_color": "Light brown",
+        "specie": "Human"
+      }
+    ],
+    "locations": [
+      {
+        "id": "a8bd9c03-7c80-4a97-b7c0-6a668acaf576",
+        "name": "The Cat Kingdom",
+        "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a9/Baron022.jpg",
+        "climate": "Continental",
+        "terrain": "Plain",
+        "surface_water": "30",
+        "residents": [
+          {
+            "id": "6b3facea-ea33-47b1-96ce-3fc737b119b8",
+            "name": "Renaldo Moon aka Moon aka Muta"
+          },
+          {
+            "id": "3042818d-a8bb-4cba-8180-c19249822d57",
+            "name": "Cat King"
+          },
+          {
+            "id": "58d1973f-f247-47d7-9358-e56cb0d2b5a6",
+            "name": "Yuki"
+          },
+          {
+            "id": "a3d8e70f-46a0-4e5a-b850-db01620d6b92",
+            "name": "Haru"
+          }
+        ]
+      }
+    ],
+    "vehicles": []
   }
 ];
 
@@ -326,7 +687,7 @@ describe('relatedDirector()',()=>{
     expect(typeof relatedDirector).toBe('function');
   });
   it('returns `resultFilmsDirector`',()=>{
-    expect(relatedDirector(filmsDirector,"Isao Takahata")).toEqual(resultfilmsDirector);
+    expect(relatedDirector(filmsDirector,"Hiroyuki Morita")).toEqual(resultfilmsDirector);
   });
 });
 
