@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations, /* chartData */} from './data.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -281,6 +281,7 @@ function showDirector(dataDirector){
             <img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
             <b><h3 id="descriptionDirector" class="descriptionDirector">${allDirectors.description}</h3></b>
         </div>
+        <canvas id="estadisticas"></canvas>
         <div id="contRelacionado__PgDirectores" class="contRelacionado__PgDirectores">
             <div class="relacionadasDirectores titulos" id="relacionadasDirectores">PELICULAS DIRIGIDAS</div>
             <div id="contRelacionadasDirectores" class="contRelacionadasDirectores"></div>
@@ -327,7 +328,10 @@ function pgDirectores(name){
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
   let maindirector =document.getElementById("contRelacionadasDirectores")
+/*   let relatedDirect = relatedDirector(films, name); */
   showInfoMovies(relatedDirector(films, name),maindirector);
+/*   let myCanvas = document.getElementById("estadisticas").getContext("2d");
+  chartData(relatedDirect,myCanvas); */
 }
 
 //metodo para las vistas de personajes

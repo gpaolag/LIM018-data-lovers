@@ -1,3 +1,4 @@
+
 export function orderAZ(films){
     let showFilms = films;
    let aZ = films.sort((a,b) =>{
@@ -117,10 +118,31 @@ export function relatedDirector(films, director){
         }
      }
      return newDirector;
+
 }
 
 export function locations(films) {
     const locations = films.map((x) => x.locations);
     const totalLocations = locations.reduce((x, y) => x.concat(y), []);
     return totalLocations;
+  }
+
+  export function chartData(films /*, mainchart */){
+    const titles=films.map(x => x.title);
+    const ranking = films.map(x => x.rt_score);
+/*     let myChart = new Chart(mainchart,{
+        type:"bar",
+            data:{
+                labels:[titles],
+                datasets:[{
+                        label:"RANKING DE SUS PELICULAS",
+                        data:[ranking]
+                }]
+            }
+    }); */
+    // eslint-disable-next-line no-console
+    console.log(titles);
+    // eslint-disable-next-line no-console
+    console.log(ranking);
+/*     return myChart */
   }

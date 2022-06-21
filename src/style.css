@@ -419,6 +419,9 @@ footer{
   cursor:auto;
   margin: 30px;
 }
+#estadisticas{
+  background-color: bisque;
+}
 
 @media (max-width: 768px){
   /*Estilo para el header de todas las páginas en dispositivos móviles*/
