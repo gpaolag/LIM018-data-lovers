@@ -432,6 +432,7 @@ footer{
   }
    header{
        height: 50px;
+       width: 98%;
   }
    .back-principal {
        padding-left: 10px;
@@ -446,6 +447,14 @@ footer{
   }
    .div_slider {
        display:block;
+  }
+  .dragon {
+   width: 370px;
+   height: auto;
+   align-self: flex-end;
+  }  
+  .subtitulo{
+    display: none;
   }
    #iconoHeader{
        height: 40px;
