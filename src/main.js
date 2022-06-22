@@ -1,6 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations} from './data.js';
-
+import { chartFilms } from './charts.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -338,23 +338,6 @@ function pgDirectores(name){
   navMenu.classList.remove("nav-menu_visible");
 }
 
-//metodo para crear gráficas
-function chartFilms (films, mainchart){
-  const titles=films.map(x => x.title);
-  const ranking = films.map(x => x.rt_score);
-  // eslint-disable-next-line no-undef
-  let chartMovies = new Chart(mainchart,{
-    type:"bar",
-        data:{
-            labels:titles,
-            datasets:[{
-                  label:"RANKING DE SUS PELICULAS",
-                  data:ranking,
-                  backgroundColor:["#070065"],
-            }]
-  }})
-  return chartMovies;
-}
 
 
 //metodo para las vistas de personajes
