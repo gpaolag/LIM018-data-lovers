@@ -490,6 +490,9 @@ footer{
    #div_buscador {
        display:block;
   }
+  #btnBuscar{
+    display: none;
+  }
    .nav-menu{
        flex-direction: column;
        align-items: center;
@@ -515,7 +518,8 @@ footer{
        cursor: pointer;
   }
    .nav-menu_visible{
-       left: 0;
+    height: auto;   
+    left: 0;
   }
   /*Estilo para el footer de todas las páginas en dispositivos móviles*/
    #infoRelacionada_Individual{
@@ -541,7 +545,7 @@ footer{
   }
 
 .listaDirectores{
-  align-self: flex-start;
+  
   background: #363E74;
   height: auto;
 }
