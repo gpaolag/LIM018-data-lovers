@@ -326,12 +326,16 @@ function pgDirectores(name){
   document.getElementById("botonesOrdenar").style.display="none";
   document.getElementById("barraBusqueda").style.display="none";
   document.getElementById("paginaLocaciones").style.display="none";
+  document.getElementById("filtersPrincipal").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
   let maindirector =document.getElementById("contRelacionadasDirectores")
   let myCanvas = document.getElementById("estadisticas");
   showInfoMovies(relatedDirector(films, name),maindirector);
   chartFilms(relatedDirector(films, name),myCanvas);
+  document.getElementById("listaDirectores").style.display="none";
+  let navMenu = document.querySelector(".nav-menu");
+  navMenu.classList.remove("nav-menu_visible");
 }
 
 //metodo para crear gráficas
