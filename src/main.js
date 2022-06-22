@@ -40,7 +40,7 @@ function showInfoMovies (arrayData, mainmovies){
         //metodo de info individual de pelicula
         function infoMovie(){
             document.getElementById("posterPelicula").innerHTML= `<img src="${filmsPublished.poster}" class="div_img_movie" />`;
-            document.getElementById("tituloPelicula").innerHTML= `<b><h3 ><p class="films-titles">${filmsPublished.title}</h3></b>`;
+            document.getElementById("tituloPelicula").innerHTML= `<b><h3 ><p class="films-titles titulos">${filmsPublished.title}</h3></b>`;
             document.getElementById("DescripcionPelicula").innerHTML= `  <div class="descripcion_movie"> <h2>${filmsPublished.description}</h2></div>`;
             document.getElementById("director_Individual").innerHTML= `  <h3 class="descripcion_titles">DIRECTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.director}</h2>`;
             document.getElementById("productor_Individual").innerHTML= `  <h3 class="descripcion_titles">PRODUCTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.producer}</h2>`;
