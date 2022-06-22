@@ -1,3 +1,4 @@
+
 export function orderAZ(films){
     let showFilms = films;
    let aZ = films.sort((a,b) =>{
@@ -117,6 +118,7 @@ export function relatedDirector(films, director){
         }
      }
      return newDirector;
+
 }
 
 export function locations(films) {

@@ -419,6 +419,11 @@ footer{
   cursor:auto;
   margin: 30px;
 }
+#estadisticas{
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
 
 @media (max-width: 768px){
   /*Estilo para el header de todas las páginas en dispositivos móviles*/
@@ -518,6 +523,10 @@ footer{
    footer{
        height: 20px;
   }
+  #estadisticas{
+    display: none;
+  }
+
  }
 
 .carruselPeliculas__pgPeliculas{
