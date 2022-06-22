@@ -432,7 +432,7 @@ footer{
   }
    header{
        height: 50px;
-       width: 98%;
+       width: 100%;
   }
    .back-principal {
        padding-left: 10px;
@@ -441,6 +441,7 @@ footer{
    .cabecera{
        margin-top: 0%;
        display:block;
+       width: 100%;
   }
    .barraBusqueda{
        display:block !important;
@@ -470,8 +471,7 @@ footer{
        align-content: center;
   }
    #contenedorCarrusel .carruselPeliculas{
-       display: grid;
-       grid-template-columns: repeat(1,1fr);
+       flex-direction: column;
        gap: 20px;
        overflow: visible;
        align-content: center;
@@ -496,10 +496,10 @@ footer{
        background-color: #43587F;
        position: fixed;
        top: 50px;
-       width: 60%;
+       width: 80%;
        padding: 20px 0%;
        height: calc(35% - 60px);
-       overflow-y: auto;
+       overflow-y: visible;
        left: 100%;
        transition: left 0.5s;
   }
@@ -532,10 +532,19 @@ footer{
    footer{
        height: 20px;
   }
-  #estadisticas{
-    display: none;
+  #contDirector{
+    flex-direction: column;
+  }
+  .contenedorGlobalDirectores{
+    position: relative;
+    width: 100%;
   }
 
+.listaDirectores{
+  align-self: flex-start;
+  background: #363E74;
+  height: auto;
+}
  }
 
 .carruselPeliculas__pgPeliculas{
