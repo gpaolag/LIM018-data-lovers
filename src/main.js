@@ -344,7 +344,7 @@ function chartFilms (films, mainchart){
         data:{
             labels:titles,
             datasets:[{
-                  label:"RANKING DEE SUS PELICULAS",
+                  label:"RANKING DE SUS PELICULAS",
                   data:ranking,
                   backgroundColor:["#070065"],
             }]
