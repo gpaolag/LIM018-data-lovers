@@ -420,7 +420,9 @@ footer{
   margin: 30px;
 }
 #estadisticas{
-  background-color: bisque;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255, 0.6);
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px){
@@ -521,6 +523,10 @@ footer{
    footer{
        height: 20px;
   }
+  #estadisticas{
+    display: none;
+  }
+
  }
 
 .carruselPeliculas__pgPeliculas{

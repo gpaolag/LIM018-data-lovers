@@ -1,5 +1,6 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations, /* chartData */} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations} from './data.js';
+
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
 
@@ -281,7 +282,7 @@ function showDirector(dataDirector){
             <img id="imgDirector" class="imgDirector" src="${allDirectors.img}"/>
             <b><h3 id="descriptionDirector" class="descriptionDirector">${allDirectors.description}</h3></b>
         </div>
-        <canvas id="estadisticas"></canvas>
+        <canvas id="estadisticas"   height= "100px" ></canvas>
         <div id="contRelacionado__PgDirectores" class="contRelacionado__PgDirectores">
             <div class="relacionadasDirectores titulos" id="relacionadasDirectores">PELICULAS DIRIGIDAS</div>
             <div id="contRelacionadasDirectores" class="contRelacionadasDirectores"></div>
@@ -328,11 +329,29 @@ function pgDirectores(name){
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
   let maindirector =document.getElementById("contRelacionadasDirectores")
-/*   let relatedDirect = relatedDirector(films, name); */
+  let myCanvas = document.getElementById("estadisticas");
   showInfoMovies(relatedDirector(films, name),maindirector);
-/*   let myCanvas = document.getElementById("estadisticas").getContext("2d");
-  chartData(relatedDirect,myCanvas); */
+  chartFilms(relatedDirector(films, name),myCanvas);
 }
+
+//metodo para crear gráficas
+function chartFilms (films, mainchart){
+  const titles=films.map(x => x.title);
+  const ranking = films.map(x => x.rt_score);
+  // eslint-disable-next-line no-undef
+  let chartMovies = new Chart(mainchart,{
+    type:"bar",
+        data:{
+            labels:titles,
+            datasets:[{
+                  label:"RANKING DEE SUS PELICULAS",
+                  data:ranking,
+                  backgroundColor:["#070065"],
+            }]
+  }})
+  return chartMovies;
+}
+
 
 //metodo para las vistas de personajes
 
