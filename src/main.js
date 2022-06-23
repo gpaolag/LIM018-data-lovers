@@ -127,37 +127,75 @@ function showInfoPeople (arrayData,mainmovies){
 
 //arreglo de peliculas destacadas
 const principales=[
-    {
-      "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
-      "title": "Howl's Moving Castle",
-      "director": "Hayao Miyazaki",
-      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg",
-      "release_date": "2004"},
-    {
-      "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
-      "title": "Spirited Away",
-      "director": "Hayao Miyazaki",
-      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Spirited_Away.png",
-      "release_date": "2001"},
-    {
-      "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
-      "title": "My Neighbor Totoro",
-      "director": "Hayao Miyazaki",
-      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg",
-      "release_date": "1988"}];
+  {
+    "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
+    "title": "Howl's Moving Castle",
+    "description": "When Sophie, a shy young woman, is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking home.",
+    "director": "Hayao Miyazaki",
+    "producer": "Toshio Suzuki",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg",
+    "release_date": "2004",
+    "rt_score": "87"},
+  {
+    "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
+    "title": "Spirited Away",
+    "description": "Spirited Away is an Oscar winning Japanese animated film about a ten year old girl who wanders away from her parents along a path that leads to a world ruled by strange and unusual monster-like animals. Her parents have been changed into pigs along with others inside a bathhouse full of these creatures. Will she ever see the world how it once was?",
+    "director": "Hayao Miyazaki",
+    "producer": "Toshio Suzuki",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Spirited_Away.png",
+    "release_date": "2001",
+    "rt_score": "97"},
+  {
+    "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+    "title": "My Neighbor Totoro",
+    "description": "Two sisters move to the country with their father in order to be closer to their hospitalized mother, and discover the surrounding trees are inhabited by Totoros, magical spirits of the forest. When the youngest runs away from home, the older sister seeks help from the spirits to find her.",
+    "director": "Hayao Miyazaki",
+    "producer": "Hayao Miyazaki",
+    "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg",
+    "release_date": "1988",
+    "rt_score": "93"}];
 const bestmovies = document.querySelector("#bestFilms");
 //metodo de mostrar peliculas destacadas
 function showBestMovies (arrayData){
-    bestmovies.innerHTML="";
-    arrayData.forEach((filmsPublished) => {
-        const div2Film = document.createElement("div"); //div para cada tarjeta
-        div2Film.classList.add("div_best_movies");
-        div2Film.innerHTML=`<img src="${filmsPublished.poster}" class="img_movie" />
-        <div class="best_textos"><h3 class="contenedor_section_h3"><p>${filmsPublished.title}</h3>
-      <h2 class="section_h2"> ${filmsPublished.director}</h2>
-      <h3 class="contenedor_section_h3"><p>${filmsPublished.release_date}</h3></div>`;
-      bestmovies.appendChild(div2Film);
-    });
+  bestmovies.innerHTML="";
+  arrayData.forEach((filmsPublished) => {
+      const div2Film = document.createElement("div"); //div para cada tarjeta
+      div2Film.classList.add("div_best_movies");
+      div2Film.innerHTML=`<img src="${filmsPublished.poster}" class="img_movie" />
+      <div class="best_textos"><h3 class="contenedor_section_h3"><p>${filmsPublished.title}</h3>
+    <h2 class="section_h2"> ${filmsPublished.director}</h2>
+    <h3 class="contenedor_section_h3"><p>${filmsPublished.release_date}</h3></div>`;
+    
+    div2Film.setAttribute("id", filmsPublished.id.concat("1"));
+    bestmovies.appendChild(div2Film);
+  
+const mainpeople = document.querySelector("#carruselPers_Relacionados");
+  const identityMovie = document.getElementById(filmsPublished.id.concat("1"));
+      identityMovie.addEventListener("click", ()=>{
+        
+    console.log(filmsPublished.id.concat("1"));
+        document.getElementById("paginaPrincipal").style.display="none";
+        document.getElementById("paginaDirectores").style.display="none";
+        document.getElementById("cabecera").style.display="none";
+        document.getElementById("topTres").style.display="none";
+        document.getElementById("Peliculas").style.display="flex";
+        mainpeople.innerHTML="";
+        infoMovie();
+        showInfoPeople(peopleforMovie(films,`${filmsPublished.id}`),mainpeople);
+      });
+
+      //metodo de info individual de pelicula
+      function infoMovie(){
+          document.getElementById("posterPelicula").innerHTML= `<img src="${filmsPublished.poster}" class="div_img_movie" />`;
+          document.getElementById("tituloPelicula").innerHTML= `<b><h3 ><p class="films-titles titulos">${filmsPublished.title}</h3></b>`;
+          document.getElementById("DescripcionPelicula").innerHTML= `  <div class="descripcion_movie"> <h2>${filmsPublished.description}</h2></div>`;
+          document.getElementById("director_Individual").innerHTML= `  <h3 class="descripcion_titles">DIRECTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.director}</h2>`;
+          document.getElementById("productor_Individual").innerHTML= `  <h3 class="descripcion_titles">PRODUCTOR : </H3> <h2 class="descripcion_movie">${filmsPublished.producer}</h2>`;
+          document.getElementById("añoLanzamiento_Individual").innerHTML= `  <h3 class="descripcion_titles">LANZAMIENTO: </H3> <h2 class="descripcion_movie">${filmsPublished.release_date}</h2>`;
+          document.getElementById("ranking_Individual").innerHTML= `  <h3 class="descripcion_titles">RANKING : </h3> <h2 class="descripcion_movie">${filmsPublished.rt_score}</h2>`;
+          document.getElementById("barraBusqueda").style.display="none";
+        }
+  });
 }
 showBestMovies(principales);
 

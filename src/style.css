@@ -206,6 +206,7 @@ a{
   flex-wrap: nowrap;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
 }
 .best_textos {
   display:flex;
