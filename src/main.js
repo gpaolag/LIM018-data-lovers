@@ -173,7 +173,6 @@ const mainpeople = document.querySelector("#carruselPers_Relacionados");
   const identityMovie = document.getElementById(filmsPublished.id.concat("1"));
       identityMovie.addEventListener("click", ()=>{
         
-    console.log(filmsPublished.id.concat("1"));
         document.getElementById("paginaPrincipal").style.display="none";
         document.getElementById("paginaDirectores").style.display="none";
         document.getElementById("cabecera").style.display="none";
