@@ -247,7 +247,7 @@ footer{
   background-image: url('img/slider.png');
   justify-content: center;
   background-size: 1600px 500px;
-  height: 500px;
+  max-height: 500px;
   color: #fff;
   width:100%;
   flex-direction: column;
