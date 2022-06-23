@@ -126,3 +126,9 @@ export function locations(films) {
     const totalLocations = locations.reduce((x, y) => x.concat(y), []);
     return totalLocations;
   }
+
+export function vehicles(films) {
+const vehicles = films.map((x) => x.vehicles);
+const totalVehicles = vehicles.reduce((x, y) => x.concat(y), []);
+return totalVehicles;
+}
