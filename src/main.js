@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations} from './data.js';
+import { orderAZ, orderZA, orderAntigua, orderReciente, newArrayPeople, peopleforMovie, SearchDirector, filterBySpecie, filterByGender, relatedDirector, locations, vehicles} from './data.js';
 import { chartFilms } from './charts.js';
 
 //Permite mostrar el menú lateral del header en dispositivos moviles
@@ -395,6 +395,41 @@ locacion.addEventListener("click",()=>{
   document.getElementById("paginaDirectores").style.display="none";
   document.getElementById("contenedorCarrusel").style.width="100%";
   document.getElementById("barraBusqueda").style.display="none";
+  document.getElementById("paginaVehiculos").style.display="none";
   viewLocaciones(locations(films,mainlocaciones));
+  document.getElementById("botonesOrdenar").style.display="none";
+});
+
+//vista de vehiculos
+const mainvehicles=document.getElementById("paginaVehiculos");
+function viewVehicles(films){
+  mainvehicles.innerHTML="";
+  films.forEach((filmsPub) => {
+    const divFilm = document.createElement("div");
+
+    divFilm.classList.add("div_content_vehicles");
+    divFilm.innerHTML=`<img src="${filmsPub.img}" class="div_img_vehicle" />
+      <b><h3 class="vehicle-titles"><p>${filmsPub.name}</h3></b>
+      <b><h3 id="description-vehicle" class="vehicle-titles"><p >DESCRIPCIÓN: ${filmsPub.description}</h3></b>
+      <b><h3 class="vehicle-titles"><p >CLASE: ${filmsPub.vehicle_class}</h3></b>`;
+      mainvehicles.appendChild(divFilm);
+  });
+}
+
+const vehiculos=document.getElementById("vehiculos");
+vehiculos.addEventListener("click",()=>{
+  document.getElementById("paginaPrincipal").style.display="none";
+  document.getElementById("paginaLocaciones").style.display="flex";
+  document.getElementById("Peliculas").style.display="none";
+  document.getElementById("cabecera").style.display="none";
+  document.getElementById("topTres").style.display="none";
+  document.getElementById("flechaIzquierda").style.display="none";
+  document.getElementById("flechaDerecha").style.display="none";
+  document.getElementById("paginaDirectores").style.display="none";
+  document.getElementById("contenedorCarrusel").style.width="100%";
+  document.getElementById("barraBusqueda").style.display="none";
+  document.getElementById("paginaLocaciones").style.display="none";
+  // eslint-disable-next-line no-console
+  console.log(viewVehicles(vehicles(films,mainvehicles)));
   document.getElementById("botonesOrdenar").style.display="none";
 });
