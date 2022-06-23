@@ -215,6 +215,7 @@ peliculas_men.addEventListener("click",()=>{
   document.getElementById("barraBusqueda").style.display="flex"; 
   document.getElementById("filtersPrincipal").style.display="none";
   document.getElementById("paginaLocaciones").style.display="none";
+  document.getElementById("paginaVehiculos").style.display="none";
   showInfoMovies(films,mainmovies);
   document.getElementById("botonesOrdenar").style.display="block";
 });
@@ -234,6 +235,7 @@ personajes_men.addEventListener("click",()=>{
   document.getElementById("barraBusqueda").style.display="flex";
   document.getElementById("filtersPrincipal").style.display="flex";
   document.getElementById("paginaLocaciones").style.display="none";
+  document.getElementById("paginaVehiculos").style.display="none";
   mainmovies.innerHTML = "";
   showInfoPeople(newArrayPeople(films),mainmovies);
   document.getElementById("botonesOrdenar").style.display="none";
@@ -365,6 +367,7 @@ function pgDirectores(name){
   document.getElementById("barraBusqueda").style.display="none";
   document.getElementById("paginaLocaciones").style.display="none";
   document.getElementById("filtersPrincipal").style.display="none";
+  document.getElementById("paginaVehiculos").style.display="none";
   let arregloDirectores = SearchDirector(directores, name);
   showDirector(arregloDirectores);
   let maindirector =document.getElementById("contRelacionadasDirectores")
@@ -467,6 +470,7 @@ vehiculos.addEventListener("click",()=>{
   document.getElementById("contenedorCarrusel").style.width="100%";
   document.getElementById("barraBusqueda").style.display="none";
   document.getElementById("paginaLocaciones").style.display="none";
+  document.getElementById("paginaVehiculos").style.display="flex";
   // eslint-disable-next-line no-console
   console.log(viewVehicles(vehicles(films,mainvehicles)));
   document.getElementById("botonesOrdenar").style.display="none";
