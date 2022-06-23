@@ -787,7 +787,7 @@ footer{
 }
 .div_content_vehicles{
   display: flex;
-  height: 400px;
+  height: auto;
   width: 600px;
   flex-direction: column;
   align-items: center;

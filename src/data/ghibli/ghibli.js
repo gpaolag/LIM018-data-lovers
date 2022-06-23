@@ -775,7 +775,7 @@ export default {
         {
           "id": "d8f893b5-1dd9-41a1-9918-0099c1aa2de8",
           "name": "Red Wing",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8f/Porco%27s_Plane.jpg",
+          "img": "https://i.pinimg.com/736x/9b/b1/29/9bb1294aa2a36c475c3c840f1373e36a.jpg",
           "description": "An experimental aircraft captured by Porco. Named Savoia S.21",
           "vehicle_class": "Airplane",
           "length": "20",
@@ -1848,7 +1848,7 @@ export default {
         {
           "id": "923d70c9-8f15-4972-ad53-0128b261d628",
           "name": "Sosuke's Boat",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/PonyoS%C5%8DsukeBoat.jpg",
+          "img": "https://i.pinimg.com/originals/f2/fc/3f/f2fc3f6e261e04054b7cd64c5019b494.png",
           "description": "A toy boat where Sosuke plays",
           "vehicle_class": "Boat",
           "length": "10",
@@ -2190,7 +2190,7 @@ export default {
         {
           "id": "411f66ed0-771c-46d3-8f68-a3b65c6dd91c",
           "name": "Mitsubishi 1MF9 ",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/4/41/Kazetachinu044.jpg",
+          "img": "https://diariodefriki.files.wordpress.com/2019/11/the-wind-rises-54bbff85723c1.jpg?w=736",
           "description": "The Mitsubishi 1MF9 or Mitsubishi Experimental Taka-type Carrier Fighter was a prototype Japanese fighter aircraft of the 1920s. It was a single-engined, single-seat biplane intended to operate from the Imperial Japanese Navy's aircraft carriers, but only two were built, with the type being rejected by the Navy.",
           "vehicle_class": "War plane",
           "length": "8",
