@@ -1,5 +1,5 @@
 import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
-import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector, relatedDirector, filterByGender, filterBySpecie, locations} from '../src/data.js';
+import {orderAZ, orderZA, orderReciente, orderAntigua, newArrayPeople, peopleforMovie, SearchDirector, relatedDirector, filterByGender, filterBySpecie, locations, vehicles} from '../src/data.js';
 
 const pruebas=[
   {
@@ -1108,5 +1108,28 @@ describe('locations()', () =>{
   });
   it('returns a object locations',()=>{
     expect(locations(filmslocations)).toEqual(resultlocations);
+  });
+});
+
+const resultVehicles =[{
+    "id": "4e09b023-f650-4747-9ab9-eacf14540cfb",
+    "name": "Air Destroyer Goliath",
+    "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e5/Goliath.png",
+    "description": "A military airship utilized by the government to access Laputa",
+    "vehicle_class": "Airship",
+    "length": "1,000",
+    "pilot": {
+      "id": "40c005ce-3725-4f15-8409-3e1b1b14b583",
+      "name": "Colonel Muska"
+    }
+  }
+];
+
+describe('vehicles()', () =>{
+  it('is a function',()=>{
+    expect(typeof vehicles).toBe('function');
+  });
+  it('returns a object vehicles',()=>{
+    expect(vehicles(filmslocations)).toEqual(resultVehicles);
   });
 });
