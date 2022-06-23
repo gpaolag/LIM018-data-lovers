@@ -56,11 +56,11 @@ PROTOTIPADO
 
 Prototipo de baja fidelidad
 
-![Image text](./baja.png)
+![Image text](https://github.com/gpaolag/LIM018-data-lovers/blob/main/src/img/baja.png)
 
 Prototipo de Alta fidelidad
 
-![Image text](./alta.png)
+![Image text](https://github.com/gpaolag/LIM018-data-lovers/blob/main/src/img/alta.png)
 
 ## Índice
 
