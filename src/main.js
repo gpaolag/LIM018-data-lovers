@@ -500,7 +500,7 @@ function chartFilms(films, mainchart) {
       labels:
         titles,
       datasets: [{
-          barThickness: "70",
+          maxBarThickness: "70",
           label: "RANKING DE SUS PELICULAS",
           data: ranking,
           backgroundColor: ["#070065"],
