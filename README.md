@@ -13,11 +13,11 @@ Tenemos a un usuario X que es fanatico de las películas de Studio Ghibli, él e
 
 Criterios de aceptación
 
-En la página se deben ver todas las películas apenas carga
-Las películas deben tener su imagen, nombre y año
-Las películas deben tener un orden ascendente por fecha
-Crear la función sortData para ordenar los datos sortData(data, sortBy, sortOrder)
-La página debe ser responsive
+  * En la página se deben ver todas las películas apenas carga
+  * Las películas deben tener su imagen, nombre y año
+  * Las películas deben tener un orden ascendente por fecha
+  * Crear la función sortData para ordenar los datos sortData(data, sortBy, sortOrder)
+  * La página debe ser responsive
 
 Historia 2
 
@@ -25,9 +25,9 @@ Al poder acceder a una portada, le muestre la información de relevancia de esa 
 
 Criterios de aceptación
 
-Crear la función searchFilm para ubicar la pelicula searchFilm(data, film)
-La función debe retornar un array con los datos de la pelicula para mostrar
-Las pelicula debe mostrase con sus decripciones y caracteristicas
+  * Crear la función searchFilm para ubicar la pelicula searchFilm(data, film)
+  * La función debe retornar un array con los datos de la pelicula para mostrar
+  * Las pelicula debe mostrase con sus decripciones y caracteristicas
 
 Historia 3
 
@@ -36,10 +36,10 @@ Para que sea fácil de navegar sobre otras búsquedas, agregar una barra donde p
 
 Criterios de aceptación
 
-Crear la función searchDato para ubicar la pelicula o personake searchDato(data,Element)
-La función debe retornar un array con los datos de personajes o peliculas simil al dato de búsqueda para mostrar
-Crear un input de búsqueda
-Las películas o personajes deben mostrarse en orden ascendente
+  * Crear la función searchDato para ubicar la pelicula o personake searchDato(data,Element)
+  * La función debe retornar un array con los datos de personajes o peliculas simil al dato de búsqueda para mostrar
+  * Crear un input de búsqueda
+  * Las películas o personajes deben mostrarse en orden ascendente
 
 Historia 4
 
@@ -47,10 +47,10 @@ El usuario también quisiera tener información de las películas más destacada
 
 Criterios de aceptación
 
-Crear la función viewDest para ubicar las peliculas más resaltante en eun aside viewDest(data,film)
-La función debe retornar un array con los datos de peliculas más resaltantes que considere el creador.
-Permitir tener los datos sin busqueda previa
-Las peliculas o personajes deben mostrarse en de prioridad del creador
+  * Crear la función viewDest para ubicar las peliculas más resaltante en eun aside viewDest(data,film)
+  * La función debe retornar un array con los datos de peliculas más resaltantes que considere el creador.
+  * Permitir tener los datos sin busqueda previa
+  * Las peliculas o personajes deben mostrarse en de prioridad del creador
 
 PROTOTIPADO
 
@@ -164,7 +164,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### HTML
 
-- [ ] **Uso de HTML semántico**
+- [✔️] **Uso de HTML semántico**
 
     <details><summary>Links</summary><p>
 
@@ -174,7 +174,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### CSS
 
-- [ ] **Uso de selectores de CSS**
+- [✔️] **Uso de selectores de CSS**
 
     <details><summary>Links</summary><p>
 
@@ -182,7 +182,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
   </p></details>
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+- [✔️] **Modelo de caja (box model): borde, margen, padding**
 
     <details><summary>Links</summary><p>
 
@@ -193,7 +193,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
   </p></details>
 
-- [ ] **Uso de flexbox en CSS**
+- [✔️] **Uso de flexbox en CSS**
 
     <details><summary>Links</summary><p>
 
@@ -204,7 +204,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### Web APIs
 
-- [ ] **Uso de selectores del DOM**
+- [✔️] **Uso de selectores del DOM**
 
     <details><summary>Links</summary><p>
 
@@ -213,7 +213,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
   </p></details>
 
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
+- [✔️] **Manejo de eventos del DOM (listeners, propagación, delegación)**
 
     <details><summary>Links</summary><p>
 
@@ -223,7 +223,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
   </p></details>
 
-- [ ] **Manipulación dinámica del DOM**
+- [✔️] **Manipulación dinámica del DOM**
 
     <details><summary>Links</summary><p>
 
@@ -237,9 +237,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### JavaScript
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [✔️] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-- [ ] **Arrays (arreglos)**
+- [✔️] **Arrays (arreglos)**
 
     <details><summary>Links</summary><p>
 
@@ -252,14 +252,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
   </p></details>
 
-- [ ] **Objetos (key, value)**
+- [✔️] **Objetos (key, value)**
 
     <details><summary>Links</summary><p>
 
   - [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
   </p></details>
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+- [✔️] **Variables (declaración, asignación, ámbito)**
 
     <details><summary>Links</summary><p>
 
@@ -267,7 +267,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Variables](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/02-variables)
   </p></details>
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+- [✔️] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
     <details><summary>Links</summary><p>
 
@@ -275,7 +275,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
   </p></details>
 
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+- [✔️] **Uso de bucles/ciclos (while, for, for..of)**
 
     <details><summary>Links</summary><p>
 
@@ -283,7 +283,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
   </p></details>
 
-- [ ] **Funciones (params, args, return)**
+- [✔️] **Funciones (params, args, return)**
 
     <details><summary>Links</summary><p>
 
@@ -293,14 +293,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
   </p></details>
 
-- [ ] **Pruebas unitarias (unit tests)**
+- [✔️] **Pruebas unitarias (unit tests)**
 
     <details><summary>Links</summary><p>
 
   - [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
   </p></details>
 
-- [ ] **Módulos de ECMAScript (ES Modules)**
+- [✔️] **Módulos de ECMAScript (ES Modules)**
 
     <details><summary>Links</summary><p>
 
@@ -308,44 +308,44 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   - [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
   </p></details>
 
-- [ ] **Uso de linter (ESLINT)**
+- [✔️] **Uso de linter (ESLINT)**
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- [✔️] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+- [✔️] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
 
 ### Control de Versiones (Git y GitHub)
 
-- [ ] **Git: Instalación y configuración**
+- [✔️] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [✔️] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [✔️] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [✔️] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+- [✔️] **GitHub: Despliegue con GitHub Pages**
 
     <details><summary>Links</summary><p>
 
   - [Sitio oficial de GitHub Pages](https://pages.github.com/)
   </p></details>
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+- [✔️] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
 ### user-centricity
 
-- [ ] **Diseñar un producto o servicio poniendo a la usuaria en el centro**
+- [✔️] **Diseñar un producto o servicio poniendo a la usuaria en el centro**
 
 ### product-design
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+- [✔️] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
-- [ ] **Seguir los principios básicos de diseño visual**
+- [✔️] **Seguir los principios básicos de diseño visual**
 
 ### research
 
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+- [✔️] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
     <details><summary>Links</summary><p>
 
@@ -670,21 +670,21 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 ## 9. Checklist
 
-- [ ] Usa VanillaJS.
-- [ ] Pasa linter (`npm run pretest`)
-- [ ] Pasa tests (`npm test`)
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+- [✔️] Usa VanillaJS.
+- [✔️] Pasa linter (`npm run pretest`)
+- [✔️] Pasa tests (`npm test`)
+- [✔️] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
       lines y branches.
-- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-- [ ] Incluye historias de usuario en `README.md`.
-- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+- [✔️] Incluye _Definición del producto_ clara e informativa en `README.md`.
+- [✔️] Incluye historias de usuario en `README.md`.
+- [✔️] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
       `README.md`.
-- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+- [✔️] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
       en `README.md`.
 - [ ] Incluye link a Zeplin en `README.md`.
 - [ ] Incluye el listado de problemas que detectaste a través de tests de
       usabilidad en el `README.md`.
-- [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-- [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-- [ ] UI: Permite filtrar data en base a una condición.
-- [ ] UI: Es _responsive_.
+- [✔️] UI: Muestra lista y/o tabla con datos y/o indicadores.
+- [✔️] UI: Permite ordenar data por uno o más campos (asc y desc).
+- [✔️] UI: Permite filtrar data en base a una condición.
+- [✔️] UI: Es _responsive_.
