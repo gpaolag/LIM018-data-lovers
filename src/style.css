@@ -339,7 +339,6 @@ footer {
   display: flex;
   height: 100%;
   justify-self: flex-end;
-  padding-right: 30px;
 }
 #txtFilmsAclamados {
   text-align: center;
@@ -500,7 +499,15 @@ footer {
     display: none;
   }
   #div_buscador {
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .filters{
+    width: 80%;
+  }
+  #botonesOrdenar{
+    display: flex;
+    justify-content: center;
   }
   #btnBuscar {
     display: none;
